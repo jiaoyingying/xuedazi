@@ -1,0 +1,15 @@
+<!--pages/pinyinDetail/pinyinDetail.wxml-->
+<text>pages/pinyinDetail/pinyinDetail.wxml</text>
+<view class="box">
+  {{zimu[id].i}}
+</view>
+<view class="box_zi">
+  <view class="zi">{{zimu[id].z}}</view>
+  <view class="icon">
+    <image src="/image/icon/volume.png"></image>
+  </view>
+</view>
+<view class="box_sx">
+  <button class="sx">上一个</button>
+  <button class="sx">下一个</button>
+</view>

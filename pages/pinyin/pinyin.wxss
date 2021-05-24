@@ -1,0 +1,21 @@
+/* pages/pinyin/pinyin.wxss */.box{
+  width: 500rpx;
+  display: flex;
+  flex-direction: column;
+  margin:auto;
+}
+.item{
+  width: 500rpx;
+  height:200rpx;
+  text-align: center;
+  background-color: yellow;
+  border:2rpx solid #666666;
+  border-radius: 10rpx;
+  margin:20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.txt{
+  font-size:50rpx;
+}

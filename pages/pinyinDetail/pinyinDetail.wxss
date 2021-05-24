@@ -1,0 +1,34 @@
+/* pages/pinyinDetail/pinyinDetail.wxss */
+.box{
+  width:500rpx;
+  height:350rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:300rpx;
+  background-color: teal;
+  margin:auto;
+}
+.box_zi{
+  box-sizing: border-box;
+  padding:40rpx;
+  width:500rpx;
+  height:200rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left:125rpx;
+  margin-top:30rpx;
+}
+.zi{
+  font-size:150rpx;
+}
+.icon image{
+  width:150rpx;
+  height: 150rpx;
+}
+.box_sx{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}

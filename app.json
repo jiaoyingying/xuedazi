@@ -1,0 +1,29 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/dazi/dazi",
+    "pages/pinyin/pinyin",
+    "pages/pinyinDetail/pinyinDetail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "拼音打字",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/pinyin/pinyin",
+      "text": "拼音"
+    }, {
+      "pagePath": "pages/dazi/dazi",
+      "text": "打字"
+    }
+  ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
