@@ -1,4 +1,5 @@
 // pages/pinyinDetail/pinyinDetail.js
+const innerAudioContext = wx.createInnerAudioContext()
 Page({
 
   /**
@@ -21,9 +22,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
-
+  audioPlay: function () {
+    innerAudioContext.play()
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -35,7 +38,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    innerAudioContext.autoplay = true
+    innerAudioContext.src = 'http://du.hanyupinyin.cn/du/pinyin/p.mp3'
+    innerAudioContext.onPlay(() => {
+      console.log('开始播放')
+    })
+    innerAudioContext.onError((res) => {
+      console.log(res.errMsg)
+      console.log(res.errCode)
+    })
   },
 
   /**
