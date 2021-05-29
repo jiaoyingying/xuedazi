@@ -1,0 +1,17 @@
+/* common/gamebox.wxss */
+.imageStyle{
+  height:250rpx;
+  width:250rpx;
+}
+.box{
+  width:200rpx;
+  height:200rpx;
+
+  position: relative;
+}
+.box_py{
+  position: absolute;
+  bottom: 3rpx;
+  font-size:54rpx;
+  right:30rpx;
+}

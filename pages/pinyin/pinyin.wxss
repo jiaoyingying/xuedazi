@@ -1,21 +1,33 @@
-/* pages/pinyin/pinyin.wxss */.box{
+/* pages/pinyin/pinyin.wxss */
+page {
+ background-color: #fff7bc;
+}
+.box{
   width: 500rpx;
   display: flex;
   flex-direction: column;
-  margin:auto;
+  margin: auto;
+  margin-top: 100rpx;
+  /* background-color:red; */
+
 }
 .item{
-  width: 500rpx;
-  height:200rpx;
+  box-sizing: border-box;
+  width: 420rpx;
+  height: 180rpx;
   text-align: center;
-  background-color: yellow;
-  border:2rpx solid #666666;
-  border-radius: 10rpx;
-  margin:20rpx;
+  background-color:#fff;
+  /* border:2rpx solid #666666; */
+  border-radius: 24rpx;
+  margin: 40rpx;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 10rpx 10rpx 10rpx rgba(0, 0, 0, .2);
 }
 .txt{
-  font-size:50rpx;
+  font-family: Segoe UI;
+  font-size: 80rpx;
+  color: #707070;
+  font-weight: bold;
 }

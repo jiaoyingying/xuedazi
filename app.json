@@ -1,28 +1,39 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/dazi/dazi",
     "pages/pinyin/pinyin",
-    "pages/pinyinDetail/pinyinDetail"
+    "pages/pinyinDetail/pinyinDetail",
+    "pages/daziHome/daziHome",
+    "pages/daIdiom/daIdiom",
+    "pages/mine/mine",
+    "pages/tiaozhan/tiaozhan",
+    "pages/likeDanzi/likeDanzi",
+    "pages/likeChengyu/likeChengyu",
+    "pages/like/like",
+    "pages/game/game"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "拼音打字",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/home/home",
-      "text": "首页"
-    }, {
-      "pagePath": "pages/pinyin/pinyin",
-      "text": "拼音"
-    }, {
-      "pagePath": "pages/dazi/dazi",
-      "text": "打字"
-    }
-  ]
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath":"/image/tabbar/home.png",
+        "selectedIconPath": "/image/tabbar/home1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath":"/image/tabbar/mine.png",
+        "selectedIconPath": "/image/tabbar/mine1.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

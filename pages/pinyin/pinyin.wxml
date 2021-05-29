@@ -1,13 +1,13 @@
-<!--pages/pinyin/pinyin.wxml-->
-<text>pages/pinyin/pinyin.wxml</text>
+<!-- pages/pinyin/pinyin.wxml
+<text>pages/pinyin/pinyin.wxml</text> -->
 <view class="box">
-  <navigator class="item" url="/pages/pinyinDetail/pinyinDetail" >
+  <navigator class="item" url="/pages/pinyinDetail/pinyinDetail?cid=0" >
     <view class="txt">声母</view>
   </navigator>
-  <navigator class="item" url="/pages/pinyinDetail/pinyinDetail" >
+  <navigator class="item" url="/pages/pinyinDetail/pinyinDetail?cid=1" >
     <view class="txt">韵母</view>
   </navigator>
-  <navigator class="item" url="/pages/pinyinDetail/pinyinDetail" >
+  <navigator class="item" url="/pages/pinyinDetail/pinyinDetail?cid=2" >
     <view class="txt">整体认读</view>
   </navigator>
 </view>

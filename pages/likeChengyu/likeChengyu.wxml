@@ -1,0 +1,13 @@
+<!--pages/likeChengyu/likeChengyu.wxml-->
+<view class="head">成语收藏</view>
+
+<view class="list">
+  <view class="box" wx:for="{{listData}}">
+    <navigator class="item" url="/pages/daIdiom/daIdiom?id={{item}}">
+    <view class="box_zi">1</view>
+    <view class="box_py">卑躬屈膝</view>
+    <view class='box_py'>bei gong qu xi</view>
+    </navigator>
+  <image class="more" src="../../image/icon/more.png"></image>
+  </view>
+</view>

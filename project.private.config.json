@@ -1,0 +1,66 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/home/home",
+          "pathName": "page/pinyin/pinyin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/pinyin/pinyin",
+          "pathName": "pages/pinyin/pinyin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/pinyinDetail/pinyinDetail",
+          "pathName": "pages/pinyinDetail/pinyinDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/dazi/dazi",
+          "pathName": "pages/dazi/dazi",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tiaozhan/tiaozhan",
+          "pathName": "pages/tiaozhan/tiaozhan",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/like/like",
+          "pathName": "pages/like/like",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/game/game",
+          "pathName": "pages/game/game",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tiaozhan/tiaozhan",
+          "pathName": "pages/tiaozhan/tiaozhan",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+/* pages/mine/mine.wxss */
+.header {
+  margin: 90rpx 0 90rpx 50rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  width: 650rpx;
+  height: 300rpx;
+  line-height: 450rpx;
+}
+
+.header image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.content {
+  margin-left: 50rpx;
+  margin-bottom: 90rpx;
+  text-align: center;
+}
+
+.content text {
+  display: block;
+  color: #404040;
+  margin-top:40rpx;
+}
+
+.bottom {
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35rpx;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #707070;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.hid{
+  display: none;
+}
+.userinfo .tophead{
+  width: 100%;
+  height: 300rpx;
+  background-color: #DBF4F4;
+  font: 35rpx Segoe UI;
+  color: #707070;
+  text-indent: 1em;
+  font-weight: bold;
+}
+.userinfo .info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 150rpx;
+  width: 600rpx;
+  height: 300rpx;
+  border-radius: 24rpx;
+  box-shadow: 0rpx 10rpx 8rpx rgba(0, 0, 0, .2);
+  text-align: center;
+  background-color: #fff;
+}
+.userinfo .list{
+  display: flex;
+  justify-content: center;
+  margin-top: 200rpx;
+  
+}
+.userinfo .list .item image{
+  float: left;
+  width: 50rpx;
+  height: 50rpx;
+  margin: 20rpx 30rpx;
+}
+.userinfo .list .item li{
+  float: left;
+  list-style: none;
+  width: 600rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border-bottom: 2rpx solid #f4f2f3;
+  font-weight: bold;
+}

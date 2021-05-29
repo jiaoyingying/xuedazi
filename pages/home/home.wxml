@@ -1,10 +1,12 @@
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
 <view class="box">
-  <navigator class="item" url="/pages/pinyin/pinyin" open-type="reLaunch" >
+  <navigator class="item" url="/pages/pinyin/pinyin"  >
     <view class="txt">拼音学习</view>
   </navigator>
-  <navigator class="item" url="/pages/dazi/dazi" open-type="reLaunch">
+  <navigator class="item" url="/pages/daziHome/daziHome">
     <view class="txt">打字练习</view>
   </navigator>
+  <navigator class="item" url="/pages/game/game" >
+    <view class="txt">趣味游戏</view>
+  </navigator>
 </view>
+

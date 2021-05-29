@@ -1,0 +1,18 @@
+<!-- pages/likeDanzi/likeDanzi.wxml
+<text>pages/likeDanzi/likeDanzi.wxml</text> -->
+<view class="head">单字收藏</view>
+
+<view class="list" wx:for="{{listData}}">
+  <view class="box">
+    <navigator class="item" url="/pages/dazi/dazi?id={{item}}">
+      <view class="box_zi">1</view>
+      <view class="box_py">源</view>
+      <view class='box_py'>yuan</view>
+    </navigator>
+    <image class="more" src="../../image/icon/more.png"></image>
+  </view>
+</view>
+
+
+
+

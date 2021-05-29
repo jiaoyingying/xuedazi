@@ -1,0 +1,22 @@
+<!-- pages/tiaozhan/tiaozhan.wxml
+<text>pages/tiaozhan/tiaozhan.wxml</text> -->
+<view class="box_help">
+  <image class="imageStyle" src="/image/icon/help.png"></image>
+</view>
+<view class="time">
+  <text style='color:red'>{{countDownNum}}</text>s
+</view>
+<view class="sent_input">
+  <view class="sent">
+    <view wx:for="{{sentence}}">
+      {{item}}
+    </view>
+  </view>
+  <view class="input">
+  <textarea auto-focus="true" class="{{flag?'cuowu':''}}" type="text" name="shuru" bindconfirm="check" bindinput="bindin" maxlength="50" placeholder="在此输入汉字" />
+  </view>
+</view>
+
+<view class="box_start">
+  <button class="start_button" bindtap="bt">开始</button>
+</view>

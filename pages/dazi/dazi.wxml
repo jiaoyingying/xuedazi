@@ -1,2 +1,27 @@
-<!--pages/dazi/dazi.wxml-->
-<text>pages/dazi/dazi.wxml</text>
+<!-- pages/dazi/dazi.wxml
+<text>pages/dazi/dazi.wxml</text> -->
+<view class="box_star" >
+  <image src='/image/icon/help.png' class='imageStyle_left'></image>
+  <image src='{{storetType? "../../image/icon/store1.png": "../../image/icon/store2.png"}}' bindtap='store' id="{{id}}" class='imageStyle'></image>
+</view>
+<view class="box_zi">
+  <text>{{characters.hanzi}}</text>
+</view>
+<view class="box_py" bindtap='eyeStatus'>
+  <view class="eye">
+    <image src='{{defaultType? "../../image/icon/close_eye.png": "../../image/icon/open_eye.png"}}' class='imageStyle'></image>
+  </view>
+  <view>
+    <text class="{{passwordType?'passwordT':''}}">{{characters.pinyin}}</text>
+  </view>
+  
+</view>
+<view class="box_input">
+  <input class="input {{flag?'cuowu':''}}" type="text" name="shuru" value="{{inputvalue}}" bindconfirm="check" bindfocus="bindf" placeholder="在此输入汉字" confirm-type="send" maxlength="1"/>
+</view>
+
+<view class="box_sx">
+  <button bindtap="shang" class="sx1" id="{{id}}">上一个</button>
+  <button bindtap="xia" class="sx2" id="{{id}}">下一个</button> 
+</view>
+

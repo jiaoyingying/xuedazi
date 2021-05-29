@@ -1,0 +1,6 @@
+<!--pages/like/like.wxml-->
+<view class="head">我的收藏</view>
+<view class="detail">
+  <navigator class="likedanzi" url="/pages/likeDanzi/likeDanzi">单字收藏</navigator>
+  <navigator class="likechengyu" url="/pages/likeChengyu/likeChengyu">成语收藏</navigator>
+</view>

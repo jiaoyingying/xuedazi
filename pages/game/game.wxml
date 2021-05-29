@@ -1,0 +1,12 @@
+<!--pages/game/game.wxml-->
+<view class="jifenBox">
+  <image class="jifenImage" src="/image/icon/score.png"></image>
+  <view class="jifen">{{score}}</view>
+</view>
+<movable-area class="bigbox">
+  <gamebox class="leftTopbox" mysrc="/image/icon/envelope1.png" pinyin="{{pinyinchoices[0]}}"></gamebox>
+  <gamebox class="rightTopbox" mysrc="/image/icon/envelope2.png" pinyin="{{pinyinchoices[1]}}"></gamebox>
+  <gamebox class="rightBottombox" mysrc="/image/icon/envelope3.png" pinyin="{{pinyinchoices[2]}}"></gamebox>
+  <gamebox class="leftBottombox" mysrc="/image/icon/envelope4.png" pinyin="{{pinyinchoices[3]}}"></gamebox>
+  <movable-view class="zibox {{colorflag?'movetrue':''}}" x="{{x}}" y="{{y}}" damping="10" direction="all" inertia bindtouchstart="moveStart"  bindtouchend="moveEnd">{{characters.hanzi}}</movable-view>
+</movable-area>

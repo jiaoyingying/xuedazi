@@ -1,0 +1,103 @@
+/* pages/daIdiom/daIdiom.wxss */
+page {
+  background-color: #dfcee3;
+}
+.box_star{
+  position: relative;
+  width: 100%;
+  height: 50rpx;
+}
+.box_star .imageStyle{
+  position: absolute;
+  top:30rpx;
+  left: 670rpx;
+}
+.box_star .imageStyle_left{
+  position: absolute;
+  top:30rpx;
+  right: 670rpx;
+  width:50rpx;
+  height:50rpx;
+}
+.imageStyle{
+  width:50rpx;
+  height:50rpx;
+}
+.box_zi {
+  width:500rpx;
+  height:350rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24rpx;
+  font-family: Segoe UI;
+  font-size:100rpx;
+  font-weight: bold;
+  color: #707070;
+  background-color:#fff;
+  margin:auto;
+  margin-top:100rpx;
+}
+.box_py {
+  box-sizing: border-box;
+  padding:20rpx;
+  width:100%;
+  height: 230rpx;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin: auto;
+  margin-bottom: 60rpx;
+  color: #707070;
+  font-size:100rpx;
+  font-family: Segoe UI;
+  font-weight: bold;
+
+}
+.box_py .eye{
+  margin-right: 20rpx;
+}
+
+.box_input {
+  background-color: #fff;
+  width: 500rpx;
+  height: 80rpx;
+  border-radius: 24rpx;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 100rpx;
+}
+.box_sx {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.box_sx .sx1{
+  width: 270rpx;
+  color: #707070;
+
+}
+.box_sx .sx2{
+  width: 270rpx;
+  color: #707070;
+  background-color: #fdff73;
+}
+.cuowu{
+  color:red;
+}
+.passwordT{
+  display:none
+}
+.pinyin{
+  font-size:80rpx;
+}
+.pbox{
+  display: flex;
+  justify-content: space-between;
+  width:400rpx;
+
+}

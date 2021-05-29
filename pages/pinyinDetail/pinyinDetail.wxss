@@ -1,13 +1,21 @@
 /* pages/pinyinDetail/pinyinDetail.wxss */
+page {
+  background-color: #e4f6d6;
+}
 .box{
   width:500rpx;
   height:350rpx;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size:300rpx;
-  background-color: teal;
+  border-radius: 24rpx;
+  font-family: Segoe UI;
+  font-size:200rpx;
+  font-weight: bold;
+  color: #707070;
+  background-color:#fff;
   margin:auto;
+  margin-top:100rpx;
 }
 .box_zi{
   box-sizing: border-box;
@@ -19,29 +27,45 @@
   align-items: center;
   margin-left:125rpx;
   margin-top:30rpx;
+  margin-bottom:200rpx;
+  color: #707070;
+
 }
 .zi{
   font-size:150rpx;
+  font-family: Segoe UI;
+  font-weight: bold;
 }
 .icon{
-  width:150rpx;
-  height: 150rpx;
+  height:120rpx;
+  width:120rpx;
   position: relative;
 }
 .icon image{
-  width:150rpx;
-  height: 150rpx;
+  height:120rpx;
+  width:120rpx;
 }
 .icon .btn{
   position:absolute;
-  height:150rpx;
-  width:150rpx;
+  height:120rpx;
+  width:120rpx;
   left:0;
   top:0;
   opacity: 0;
 }
-.box_sx{
-  width:100%;
+.box_sx {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  width: 100%;
+}
+.box_sx .sx1{
+  width: 270rpx;
+  color: #707070;
+
+}
+.box_sx .sx2{
+  width: 270rpx;
+  color: #707070;
+  background-color: #fdff73;
 }

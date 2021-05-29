@@ -1,0 +1,39 @@
+/* pages/like/like.wxss */
+.head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300rpx;
+  font: bold 60rpx 'Segoe UI';
+  color: #605E5E;
+  background-color: #DBF4F4;
+}
+.detail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  font: bold 48rpx 'Segoe UI';
+  color: #605E5E;
+}
+.detail .likedanzi{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150rpx;
+  width: 500rpx;
+  height: 200rpx;
+  border-radius: 24rpx;
+  background-color: #FFF7BC;
+}
+.detail .likechengyu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150rpx;
+  width: 500rpx;
+  height: 200rpx;
+  border-radius: 24rpx;
+  background-color: #E4F6D6;
+}

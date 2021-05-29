@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": false,
     "postcss": true,
@@ -30,7 +30,6 @@
       "outputPath": ""
     },
     "enableEngineNative": false,
-    "bundle": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
@@ -42,7 +41,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.17.0",
   "appid": "wx14cea3ec02207e17",
-  "projectname": "miniprogram-5",
+  "projectname": "miniprogram-52",
   "debugOptions": {
     "hidedInDevtools": []
   },
