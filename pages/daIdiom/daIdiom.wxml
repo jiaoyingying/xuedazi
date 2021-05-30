@@ -1,8 +1,22 @@
 <!--pages/daIdiom/daIdiom.wxml-->
-<!--pages/daIdiom/daIdiom.wxml-->
+<!-- 以下为引导页遮罩 -->
+<view class="shadow_box" hidden='{{!isTiptrue}}'>
+  <view class="finger">
+    <image src="/image/icon/finger.png"></image>
+    <text>点击此处可查看释义</text>
+  </view>
+  <view class="finger" style="margin-bottom:100rpx;">
+    <text>输入后点击<text class="fs">发送</text>提交
+    </text>
+  </view>
+ 
+  <view class="dianji">
+    <button class="know" bindtap="closeThis">知道了</button>
+  </view>
+</view>
 <view class="box_star" >
-  <image src='/image/icon/help.png' class='imageStyle_left'></image>
-  <image src='{{storetType? "../../image/icon/store1.png": "../../image/icon/store2.png"}}' class='imageStyle' bindtap='store' id="{{id}}"></image>
+  <navigator url="../help/help"><image src='/image/icon/help.png' class='imageStyle_left'></image></navigator>
+  <image src='{{isCollect? "../../image/icon/store2.png": "../../image/icon/store1.png"}}' class='imageStyle' bindtap='store' id="{{id}}"></image>
 </view>
 <view class="box_zi" bindtap="explain">
   <text>{{idiom.word}}</text>

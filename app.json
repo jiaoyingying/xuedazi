@@ -11,7 +11,8 @@
     "pages/likeDanzi/likeDanzi",
     "pages/likeChengyu/likeChengyu",
     "pages/like/like",
-    "pages/game/game"
+    "pages/game/game",
+    "pages/help/help"
   ],
   "window": {
     "backgroundTextStyle": "light",

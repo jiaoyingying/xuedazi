@@ -2,6 +2,41 @@
 page {
   background-color: #e4f6d6;
 }
+/* 以下为引导页样式设置 */
+.shadow_box{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  background-color: rgba(22, 23, 24, 0.56);
+}
+
+.finger{
+  position: relative;
+  top: 600rpx;
+  left: 150rpx;
+}
+
+.finger text{
+  font: 48rpx 'Microsoft YaHei';
+  color: #FFFFFF;
+}
+.finger image{
+  width: 50rpx;
+  height: 50rpx;
+}
+/* 知道了按钮样式设置 */
+.dianji .know{
+  margin-top: 1000rpx;
+  width: 270rpx;
+  color: #fff;
+  background-color: #4e4e4e;
+}
 .box{
   width:500rpx;
   height:350rpx;

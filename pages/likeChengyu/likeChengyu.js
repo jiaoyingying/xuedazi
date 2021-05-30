@@ -8,6 +8,7 @@ Page({
     listData:[
       1,10
     ],
+    collectNums:0
   },
 
   /**
@@ -28,7 +29,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    const collectIdiom=wx.getStorageSync('collectIdiom')||[];
+    this.setData({
+      collectNums:collectIdiom.length,
+      listData:collectIdiom
+    })
   },
 
   /**

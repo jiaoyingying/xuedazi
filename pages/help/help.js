@@ -1,18 +1,18 @@
-// pages/likeDanzi/likeDanzi.js
+// pages/help/help.js
 Page({
 
+  /**
+   * 页面的初始数据
+   */
   data: {
-    listData:[
-      1,10
-    ],
-    collectNums:0
+
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
-    
   },
 
   /**
@@ -26,12 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const collectChar=wx.getStorageSync('collectChar')||[];
-    this.setData({
-      collectNums:collectChar.length,
-      listData:collectChar
-    })
-    
+
   },
 
   /**

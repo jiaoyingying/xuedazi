@@ -1,10 +1,19 @@
 <!-- pages/tiaozhan/tiaozhan.wxml
 <text>pages/tiaozhan/tiaozhan.wxml</text> -->
+<view class="shadow_box" hidden='{{!isTiptrue}}' >
+  <view class="finger" style="margin-bottom:100rpx;">
+    <text>输入后点击<text class="fs">发送</text>提交
+    </text>
+  </view>
+  <view class="dianji">
+    <button class="know" bindtap="closeThis">知道了</button>
+  </view>
+</view>
 <view class="box_help">
   <image class="imageStyle" src="/image/icon/help.png"></image>
 </view>
 <view class="time">
-  <text style='color:red'>{{countDownNum}}</text>s
+  <text style='color:red'>{{countDownNum}}</text>s  正确率：<text style='color:red'>{{currcorrect_text}}%</text>
 </view>
 <view class="sent_input">
   <view class="sent">
@@ -13,7 +22,7 @@
     </view>
   </view>
   <view class="input">
-  <textarea auto-focus="true" class="{{flag?'cuowu':''}}" type="text" name="shuru" bindconfirm="check" bindinput="bindin" maxlength="50" placeholder="在此输入汉字" />
+  <textarea disabled="{{!timerflag}}" auto-focus="true" class="{{flag?'cuowu':''}}" type="text" name="shuru" bindconfirm="bindin" maxlength="50" placeholder="在此输入汉字" />
   </view>
 </view>
 

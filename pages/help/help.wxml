@@ -1,0 +1,46 @@
+<!--pages/help/help.wxml-->
+<view class="header">
+  <image src="../../image/icon/help.png"></image>
+  <view class="txt">帮助中心</view>
+</view>
+<view class="box">
+  <view class="question"> 
+  Q1. 练习中的拼音和键盘上的拼音不一样怎么办？
+  </view>
+  <view class="ans">
+  练习中显示的拼音为小写字母，手机键盘上的字母可能是大写字母，下面是拼音大小写对照：
+  <image src="/image/help1.jpg"></image>
+  </view>
+</view>
+<view class="box">
+  <view class="question"> 
+  Q2. 如何切换输入法？（请下滑翻动查看，以苹果搜狗输入法为例）
+  </view>
+  <view class="ans">
+    1. 点击输入框后，如下图所示，屏幕下方出现的界面就是您的输入法界面，点击下图所示红色方框内的键盘图标：
+  <image src="/image/help1.png" mode="widthFix"></image>
+  2. 点击图标后即可看到键盘选择界面，如下图所示，三个红色方框内的图标都是拼音输入法：
+  <image src="/image/help2.png" mode="widthFix"></image>
+  </view>
+</view>
+
+<view class="box">
+  <view class="question"> 
+  Q3. 下面介绍三种输入法之间的区别，建议尝试后选择适合您的键盘进行使用：
+  </view>
+  <view class="ans">
+（1） 中文9键：
+中文9键的按键如图所示，三到四个字母为一组，字母分布相对集中，按键区域较大，速度相对较快。
+<image src="/image/help3.jpg" mode="widthFix"></image>
+（2） 中文大9键：
+整体与上面的9键类似，但推荐字体更大，更推荐您使用。
+<image src="/image/help4.jpg" mode="widthFix"></image>
+（3） 中文26键：
+每个字母单独显示，打字准确率相对较高，熟练使用后打字速度较快。但字体相对较小，操作难度相对较大，适合大屏手机和双手操作。
+中文26键排列与电脑键盘排列基本一致，若希望在电脑打字，可以考虑使用中文26键的键盘。
+<image src="/image/help5.jpg" mode="widthFix"></image>
+  </view>
+</view>
+
+
+
