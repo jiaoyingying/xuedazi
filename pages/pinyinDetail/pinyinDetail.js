@@ -12,6 +12,7 @@ Page({
     left:1,
     right:24,
     cid:null,
+    isTiptrue:true
   },
   setZimu(res){
     console.log(res)
@@ -76,15 +77,19 @@ Page({
       console.log(res.errCode)
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    const{cid}=options;
-    console.log(cid)
-    this.setData({
-      cid:cid
+  closeThis:function(e){
+    console.log("dianjile")
+    wx.setStorage({
+      key: 'PydetailOpen',
+      data: 'OpenTwo'
     })
+    this.setData({
+      isTiptrue:false
+    })
+    this.getChar()
+  },
+  getChar:function(){
+    let cid=this.data.cid
     if(cid==0){
       this.getLetter(this.data.id)
     }
@@ -104,7 +109,28 @@ Page({
       })
       this.getLetter(56)
     }
-    
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    const{cid}=options;
+    console.log(cid)
+    this.setData({
+      cid:cid
+    })
+    let firstOpen = wx.getStorageSync("PydetailOpen")
+    console.log("是否首次打开本页面==",firstOpen)
+    if (firstOpen == undefined || firstOpen == '') { //根据缓存周期决定是否显示新手引导
+      this.setData({
+        isTiptrue: true,
+      })
+    } else {
+      this.setData({
+        isTiptrue: false,
+      })
+    this.getChar();
+    }
   },
   audioPlay: function () {
     innerAudioContext.play()

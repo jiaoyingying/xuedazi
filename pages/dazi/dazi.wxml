@@ -1,8 +1,22 @@
 <!-- pages/dazi/dazi.wxml
 <text>pages/dazi/dazi.wxml</text> -->
+<!-- 以下为引导页遮罩 -->
+<view class="shadow_box" hidden='{{!isTiptrue}}'>
+  <view class="finger1">
+    <image src="/image/icon/finger.png"></image>
+    <text>点击问号查看帮助</text>
+  </view>
+  <view class="finger2">
+    <image src="/image/icon/finger.png"></image>
+    <text>点击星星收藏</text>
+    </view>
+  <view class="dianji">
+    <button class="know" bindtap="closeThis">知道了</button>
+  </view>
+</view>
 <view class="box_star" >
-  <image src='/image/icon/help.png' class='imageStyle_left'></image>
-  <image src='{{storetType? "../../image/icon/store1.png": "../../image/icon/store2.png"}}' bindtap='store' id="{{id}}" class='imageStyle'></image>
+  <navigator url="../help/help"><image src='/image/icon/help.png' class='imageStyle_left'></image></navigator>
+  <image src='{{isCollect? "../../image/icon/store2.png": "../../image/icon/store1.png"}}' bindtap='store' id="{{id}}" class='imageStyle'></image>
 </view>
 <view class="box_zi">
   <text>{{characters.hanzi}}</text>

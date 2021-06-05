@@ -59,6 +59,12 @@
           "pathName": "pages/tiaozhan/tiaozhan",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/help/help",
+          "pathName": "pages/help/help",
+          "query": "",
+          "scene": null
         }
       ]
     }

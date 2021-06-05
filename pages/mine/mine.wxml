@@ -29,8 +29,12 @@
                         <image src="/image/icon/star.png"></image>我的收藏
                     </navigator>
                 </li>
-                <li><image src="/image/icon/help2.png"></image>帮助中心</li>
-                <li><image src="/image/icon/contact.png"></image>联系我们</li>
+                <li>
+                    <navigator url="../help/help">
+                        <image src="/image/icon/help2.png"></image>帮助中心
+                    </navigator>
+                </li>
+                <li bindtap="contact"><image src="/image/icon/contact.png"></image>联系我们</li>
                 <li><image src="/image/icon/notice.png"></image>系统通知</li>
 
             </ul>

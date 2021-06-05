@@ -5,11 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isTiptrue:true,
+    timerflag:false,
     timer: '1',//定时器名字
     countDownNum: 60,//倒计时初始值
-    sentence:"只要下定决心，过去的失败，正好是未来行动的借鉴；只要不屈不挠，一时的障碍，正好是推动成功的力量。"
+    sentence:"只要下定决心，过去的失败，正好是未来行动的借鉴；只要不屈不挠，一时的障碍，正好是推动成功的力量。",
+    currcorrect_text:100
   },
  bt:function(){
+   this.setData({timerflag:true});
   //启动定时器
   this.countDown();
  },
@@ -34,6 +38,12 @@ Page({
             //因为timer是存在data里面的，所以在关掉时，也要在data里取出后再关闭
             clearInterval(that.data.timer);
             //关闭定时器之后，可作其他处理codes go here
+            wx.showToast({
+              title: '时间到',
+            })
+            that.setData({
+              timerflag: false
+            })
           }
         }, 1000)
       })
@@ -41,11 +51,31 @@ Page({
     bindin:function(e){
       console.log(e.detail.value)
     },
+    closeThis:function(e){
+      console.log("dianjile")
+      wx.setStorage({
+        key: 'DaOpen',
+        data: 'OpenTwo'
+      })
+      this.setData({
+        isTiptrue:false
+      })
+    },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let firstOpen = wx.getStorageSync("DaOpen")
+    console.log("是否首次打开本页面==",firstOpen)
+    if (firstOpen == undefined || firstOpen == '') { //根据缓存周期决定是否显示新手引导
+      this.setData({
+        isTiptrue: true,
+      })
+    } else {
+      this.setData({
+        isTiptrue: false,
+      })
+    }
   },
 
   /**

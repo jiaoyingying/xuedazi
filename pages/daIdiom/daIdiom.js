@@ -6,9 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isCollect:false,//是否被收藏
+    isTiptrue:true,
     inputvalue:'',
     id:0,
-    idiom:{iid:1,
+    idiom:{id:1,
       word:"挨肩迭背",
       pinyin:["āi, jiān ,dié ,bèi"],
       abbreviation:"ajdb",
@@ -25,13 +27,16 @@ Page({
   //初始化页面数据
   setChar(res){
     console.log(res)
+    let collectIdiom=wx.getStorageSync('collectIdiom')||[];
+    //判断是否被收藏
+    let isCollect=collectIdiom.some(v=>v.id===res.data[0].id)
     let pinyin=res.data[0].pinyin.split(' ');
     res.data[0].pinyin=pinyin
     this.setData({
       idiom:res.data[0],
       defaultType:true,
       passwordType:true,
-      storetType:true,
+      isCollect,
       inputvalue:''
     })
   },
@@ -97,10 +102,31 @@ Page({
     }
   })
 },
+closeThis:function(e){
+  console.log("dianjile")
+  wx.setStorage({
+    key: 'DaidiomOpen',
+    data: 'OpenTwo'
+  })
+  this.setData({
+    isTiptrue:false
+  })
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let firstOpen = wx.getStorageSync("DaidiomOpen")
+    console.log("是否首次打开本页面==",firstOpen)
+    if (firstOpen == undefined || firstOpen == '') { //根据缓存周期决定是否显示新手引导
+      this.setData({
+        isTiptrue: true,
+      })
+    } else {
+      this.setData({
+        isTiptrue: false,
+      })
+    }
     let {id}=options;
     if(id==undefined)
     {
@@ -144,14 +170,43 @@ Page({
       passwordType: this.data.passwordType
   })
 },
-store:function(e){
-  let sT=!this.data.storetType
-  console.log(e)
-  let storeN=this.data.storeN
-  storeN.push(this.data.id)
+//收藏，
+/*
+1、onshow加载缓存中的商品数据
+2、判断当前商品是否被收藏 是，改变图标
+3、点击收藏 
+    判断当前商品是否存在于缓存数组中，已存在，则删除
+    不存在，则加入到缓存中
+*/
+store:function()
+{
+  let isCollect=false;
+  let collectIdiom=wx.getStorageSync('collectIdiom')||[];
+  let index=collectIdiom.findIndex(v=>v.id===this.data.id)
+  console.log(collectIdiom)
+  if(index!==-1)
+  {
+    collectIdiom.splice(index,1);
+    isCollect=false;
+    wx.showToast({
+      title: '取消成功',
+      mask:true
+    })
+  }else{
+    let obj={};
+    obj.id=this.data.id;
+    obj.hanzi=this.data.idiom.word
+    obj.pinyin=this.data.idiom.pinyin
+    collectIdiom.push(obj);
+    isCollect=true;
+    wx.showToast({
+      title: '收藏成功',
+      mask:true
+    })
+  }
+  wx.setStorageSync('collectIdiom', collectIdiom);
   this.setData({
-    storetType:sT,
-    storeN
+    isCollect
   })
 },
   /**
@@ -165,7 +220,7 @@ store:function(e){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+ 
   },
 
   /**

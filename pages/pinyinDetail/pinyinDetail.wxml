@@ -1,5 +1,16 @@
 <!-- pages/pinyinDetail/pinyinDetail.wxml
 <text>pages/pinyinDetail/pinyinDetail.wxml</text> -->
+<!-- 以下为引导页遮罩 -->
+<view class="shadow_box" hidden='{{!isTiptrue}}'>
+  <view class="finger">
+    <text>点击喇叭听读音  </text>
+    <image src="/image/icon/finger.png"></image>
+  </view>
+  
+  <view class="dianji">
+    <button class="know" bindtap="closeThis">知道了</button>
+  </view>
+</view>
 <view class="box">
   {{zimu.letter}}
 </view>

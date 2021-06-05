@@ -1,3 +1,21 @@
+<!-- 以下为引导页遮罩 -->
+<view class="shadow_box" hidden="{{!isTiptrue}}">
+  <view class="finger" style="margin-top:280rpx;">
+    <image src="/image/icon/finger.png"></image>
+    <text>点击此处学拼音</text>
+  </view>
+  <view class="finger">
+    <image src="/image/icon/finger.png"></image>
+    <text>点击此处学打字</text>
+    </view>
+  <view class="finger">
+    <image src="/image/icon/finger.png"></image>
+    <text>点击此处玩游戏</text>
+    </view>
+  <view class="dianji">
+    <button class="know" bindtap="closeThis">知道了</button>
+  </view>
+</view>
 <view class="box">
   <navigator class="item" url="/pages/pinyin/pinyin"  >
     <view class="txt">拼音学习</view>
