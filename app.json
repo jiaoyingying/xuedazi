@@ -12,7 +12,8 @@
     "pages/likeChengyu/likeChengyu",
     "pages/like/like",
     "pages/game/game",
-    "pages/help/help"
+    "pages/help/help",
+    "pages/paihang/paihang"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,6 +22,8 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "selectedColor":"#1296db",
+    "color": "#515151",
     "list": [
       {
         "pagePath": "pages/home/home",

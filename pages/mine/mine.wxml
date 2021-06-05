@@ -21,6 +21,8 @@
         <view class="info">
             <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
             <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            <text class="game1" space="ensp" bindtap="paihang">积分：{{score}}  <text class="game1" style="color:green">排行榜</text></text>
+            
         </view>
         <view class="list">
             <ul class="item">

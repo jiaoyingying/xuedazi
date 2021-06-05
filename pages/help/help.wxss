@@ -18,7 +18,7 @@
 }
 .box{
   margin:10rpx 0;
-  padding: 5rpx;
+  padding: 20rpx;
   border:1rpx solid #eeeeee
 }
 .question{

@@ -1,0 +1,14 @@
+<!--pages/paihang/paihang.wxml-->
+<view class="header">排行榜</view>
+
+  <view wx:for="{{listData}}" class="body">
+    <view class="box">
+        <view class="box_1">{{index+1}}</view>
+        <image class="box_2" src="{{item.avatarUrl}}"></image>
+        <view class='box_3'>{{item.name}}</view>
+    </view>
+    <view>
+      {{item.score}}
+    </view>
+  </view>
+

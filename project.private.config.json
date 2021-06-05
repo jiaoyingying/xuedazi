@@ -65,6 +65,18 @@
           "pathName": "pages/help/help",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/paihang/paihang",
+          "pathName": "pages/paihang/paihang",
+          "query": "",
+          "scene": null
         }
       ]
     }

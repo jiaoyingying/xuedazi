@@ -68,7 +68,7 @@
   position: fixed;
   top: 150rpx;
   width: 600rpx;
-  height: 300rpx;
+  height: 400rpx;
   border-radius: 24rpx;
   box-shadow: 0rpx 10rpx 8rpx rgba(0, 0, 0, .2);
   text-align: center;
@@ -77,7 +77,7 @@
 .userinfo .list{
   display: flex;
   justify-content: center;
-  margin-top: 200rpx;
+  margin-top: 300rpx;
   
 }
 .userinfo .list .item image{
@@ -96,4 +96,8 @@
   background-color: #fff;
   border-bottom: 2rpx solid #f4f2f3;
   font-weight: bold;
+}
+.game1{
+  font-size:30rpx;
+  margin-top: 20rpx;
 }

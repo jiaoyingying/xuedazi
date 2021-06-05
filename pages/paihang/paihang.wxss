@@ -1,0 +1,36 @@
+/* pages/paihang/paihang.wxss */
+.header{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150rpx;
+  background-color: #FFF7BC;
+  font: bold 48rpx 'Segoe UI';
+  color: #605E5E;
+}
+.list{
+  display: flex;
+  flex-direction: column;
+}
+.box{
+  display:flex;
+}
+.box_2{
+  width:50rpx;
+  height:50rpx;
+  border:1rpx solid #eeeeee;
+  border-radius: 25rpx;
+  margin:5rpx 20rpx;
+}
+.box_1{
+  color:#616161;
+  font-weight: bold;
+}
+.body{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 20rpx;
+  border-bottom: 1rpx solid #dddddd;
+  line-height: 50rpx;
+}

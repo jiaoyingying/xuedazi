@@ -1,3 +1,4 @@
+const util=require("../../utils/util.js")
 Page({
 
   /**
@@ -7,7 +8,8 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUseGetUserProfile: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    score:0
   },
   onLoad() {
     let userflag=wx.getStorageSync('userflag')
@@ -25,6 +27,7 @@ Page({
         })
       }
     }
+    
   },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
@@ -35,6 +38,7 @@ Page({
       desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
         wx.setStorageSync('userinfo', res.userInfo)
+        util.myrequest(res.userInfo,getApp().globalData.url_0+"updateUser").then();
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
@@ -52,8 +56,11 @@ Page({
   contact(){
     wx.showModal({
       title:"联系方式",
-      content:"微信号：pinyinType"
+      content:"邮箱：y.pan@stu.pku.edu.cn"
     })
+  },
+  paihang(){
+    wx.navigateTo({url:"../paihang/paihang"})
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -66,7 +73,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    let score=wx.getStorageSync('score');
+    this.setData({
+      score:score
+    })
   },
 
   /**

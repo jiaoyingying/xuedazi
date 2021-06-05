@@ -217,6 +217,7 @@ shuffle:function(arr) {
     let data={};
     data.score=score;
     getApp().globalData.score=score;
+    wx.setStorageSync('score', score)
     util.myrequest(data,getApp().globalData.url_0+"updateScore")
   },
 
