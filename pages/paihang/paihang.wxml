@@ -1,14 +1,21 @@
-<!--pages/paihang/paihang.wxml-->
-<view class="header">排行榜</view>
+<!--pages/paihang/paihang.wxml
+<view class="head"></view>-->
 
-  <view wx:for="{{listData}}" class="body">
+<view class="bg">
+<my-navi my-property='{{aa}}'></my-navi>
+</view>
+
+<view class="contain">
+  <view wx:for="{{listData}}" class="body {{id==item.id?'mine':''}}">
     <view class="box">
-        <view class="box_1">{{index+1}}</view>
-        <image class="box_2" src="{{item.avatarUrl}}"></image>
-        <view class='box_3'>{{item.name}}</view>
+      <view hidden="{{id!=item.id}}" style="color:red">我</view>
+      <view hidden="{{id==item.id}}" class="box_1">{{index+1}}</view>
+      <image class="box_2" src="{{item.avatarUrl}}"></image>
+      <view class='box_3'>{{item.name}}</view>
     </view>
     <view>
       {{item.score}}
     </view>
   </view>
+</view>
 

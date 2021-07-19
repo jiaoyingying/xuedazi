@@ -1,0 +1,44 @@
+.con{
+  width:100%;
+  overflow-x:hidden;
+}
+.picture{
+  width: 100%;
+  position: absolute;
+}
+.box{
+  position: absolute;
+  top:430rpx;
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  background-color: #FFFFFF;
+  border-radius: 35rpx, 35rpx, 0rpx, 0rpx;
+}
+.item{
+  width: 315rpx;
+  height:300rpx;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 24rpx;
+  margin:20rpx auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top{
+  margin-top: 60rpx;
+}
+.txt{
+  font-family: Segoe UI;
+  font-size: 80rpx;
+  color: #707070;
+  font-weight: bold;
+}
+
+.image{
+  width: 315rpx;
+  height: 300rpx;
+}

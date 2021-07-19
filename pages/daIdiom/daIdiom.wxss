@@ -1,61 +1,23 @@
 /* pages/daIdiom/daIdiom.wxss */
 page {
-  background-color: #dfcee3;
+  background-color: #FFFFFF;
 }
-/* 引导页遮罩样式 */
-.shadow_box{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99999;
-  background-color: rgba(22, 23, 24, 0.56);
-}
-.finger{
-  display: flex;
-  flex-direction: column;
-  margin-top: 400rpx;
-}
-
-.finger text{
-  font: 48rpx 'Microsoft YaHei';
-  color: #FFFFFF;
-  text-align: center;
-}
-.finger .fs{
-  color: rgb(228, 134, 72);
-}
-.finger image{
-  width: 50rpx;
-  height: 50rpx;
-}
-/* 知道了按钮样式设置 */
-.dianji .know{
-  margin: 200rpx auto;
-  width: 270rpx;
-  color: #fff;
-  background-color: #4e4e4e;
-  
-}
+/* 新页面样式 */
+/* 帮助与收藏 */
 .box_star{
   position: relative;
   width: 100%;
-  height: 50rpx;
 }
 .box_star .imageStyle{
   position: absolute;
-  top:30rpx;
+  z-index: 2;
+  top:160rpx;
   left: 670rpx;
 }
 .box_star .imageStyle_left{
   position: absolute;
-  top:30rpx;
+  z-index: 2;
+  top:160rpx;
   right: 670rpx;
   width:50rpx;
   height:50rpx;
@@ -64,69 +26,103 @@ page {
   width:50rpx;
   height:50rpx;
 }
-.box_zi {
-  width:500rpx;
-  height:350rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 24rpx;
-  font-family: Segoe UI;
-  font-size:100rpx;
-  font-weight: bold;
-  color: #707070;
-  background-color:#fff;
-  margin:auto;
-  margin-top:100rpx;
+/* 显示词语部分 */
+.top{
+  width: 750rpx;
+  height: 705rpx;
 }
-.box_py {
+.orange{
+  width: 750rpx;
+  height: 705rpx;
+  position: absolute;
+  z-index: 1;
+}
+.header{
+  position: relative;
+  width: 586rpx;
+  height: 300rpx;
+  margin: auto;
+
+  
+}
+.fangkuang{
+  position: relative;
+  z-index: 2;
+  width: 586rpx;
+  height: 300rpx;
+  margin-top: 130rpx;
+  
+}
+.py{
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 200rpx;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  font-size:110rpx;
+  font-family: PingFang;
+  font-weight: bold;
+  color: #ff8676;
+}
+/* 拼音的样式 */
+.box_py{
+  width: 700rpx;
+  height: 250rpx;
   box-sizing: border-box;
-  padding:20rpx;
-  width:100%;
-  height: 230rpx;
   display: flex;
   justify-content: center;
-  align-items:center;
-  margin: auto;
-  margin-bottom: 60rpx;
-  color: #707070;
+  flex-direction: row;
+  margin: 90rpx auto;
   font-size:100rpx;
-  font-family: Segoe UI;
+  font-family: "Gungsuh";
   font-weight: bold;
+  color: #333333;
+  
 
 }
 .box_py .eye{
+  
   margin-right: 20rpx;
 }
-
+.imageStyle{
+  width: 50rpx;
+  height: 50rpx;
+}
+/* 输入框样式 */
 .box_input {
-  background-color: #fff;
-  width: 500rpx;
-  height: 80rpx;
-  border-radius: 24rpx;
+  width: 600rpx;
+  height: 90rpx;
+  border-radius: 10rpx;
   align-items: center;
   display: flex;
   justify-content: center;
   text-align: center;
   margin: auto;
-  margin-bottom: 100rpx;
+  box-shadow:rgba(0,0,0,.2) 0px 0px 10px;
+  
 }
+/* 上下按钮样式 */
 .box_sx {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  margin-top: 180rpx;
 }
-.box_sx .sx1{
-  width: 270rpx;
-  color: #707070;
-
+.former,.next{
+  width: 275rpx;
+  height: 100rpx;
 }
-.box_sx .sx2{
-  width: 270rpx;
-  color: #707070;
-  background-color: #fdff73;
+.sx1[plain],.sx2[plain]{
+  padding: 0;
+  border:none;   
+  width: 275rpx;
+  height: 100rpx;
 }
+/* 成语拼音样式 */
 .cuowu{
   color:red;
 }
@@ -138,6 +134,24 @@ page {
 }
 .pbox{
   display: flex;
-  justify-content:space-evenly;
-  width:400rpx;
+  justify-content:center;
+  width:650rpx;
+}
+.zhushi{
+  position: absolute;
+  height:50rpx;
+  width: 100%;
+  z-index:10;
+  display: flex;
+  justify-content: center;
+  top:250rpx;
+  color:white;
+  padding:9rpx 0;
+ 
+}
+.zhushi image{
+  padding:7rpx 0;
+  height:36rpx;
+  width: 36rpx;
+  z-index:10;
 }

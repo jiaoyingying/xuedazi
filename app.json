@@ -2,18 +2,21 @@
   "pages": [
     "pages/home/home",
     "pages/dazi/dazi",
-    "pages/pinyin/pinyin",
     "pages/pinyinDetail/pinyinDetail",
-    "pages/daziHome/daziHome",
     "pages/daIdiom/daIdiom",
     "pages/mine/mine",
-    "pages/tiaozhan/tiaozhan",
-    "pages/likeDanzi/likeDanzi",
+    "pages/edituser/edituser",
     "pages/likeChengyu/likeChengyu",
     "pages/like/like",
     "pages/game/game",
     "pages/help/help",
-    "pages/paihang/paihang"
+    "pages/paihang/paihang",
+    "pages/test/test",
+    "pages/home2/home2",
+    "pages/practicedazi/practicedazi",
+    "pages/phrase/phrase",
+    "pages/review/review",
+    "pages/keyboard/keyboard"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -40,5 +43,11 @@
     ]
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.4",
+      "provider": "wx069ba97219f66d99"
+    }
+  }
 }

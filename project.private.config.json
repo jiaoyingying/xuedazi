@@ -77,6 +77,48 @@
           "pathName": "pages/paihang/paihang",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/home2/home2",
+          "pathName": "pages/home2/home2",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/test/test",
+          "pathName": "pages/test/test",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/phrase/phrase",
+          "pathName": "pages/phrase/phrase",
+          "query": "id=0",
+          "scene": null
+        },
+        {
+          "name": "pages/daIdiom/daIdiom",
+          "pathName": "pages/daIdiom/daIdiom",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/edituser/edituser",
+          "pathName": "pages/edituser/edituser",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/review/review",
+          "pathName": "pages/review/review",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/keyboard/keyboard",
+          "pathName": "pages/keyboard/keyboard",
+          "query": "",
+          "scene": null
         }
       ]
     }

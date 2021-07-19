@@ -1,6 +1,6 @@
 <!--pages/help/help.wxml-->
 <view class="header">
-  <image src="../../image/icon/help.png"></image>
+  <image src="../../image/icon/help2.png"></image>
   <view class="txt">帮助中心</view>
 </view>
 <view class="box">

@@ -1,0 +1,139 @@
+/* pages/daIdiom/daIdiom.wxss */
+page {
+  background-color: #FFFFFF;
+}
+/* 新页面样式 */
+/* 帮助与收藏 */
+.box_star{
+  position: relative;
+  width: 100%;
+}
+.box_star .imageStyle{
+  position: absolute;
+  z-index: 2;
+  top:160rpx;
+  left: 670rpx;
+}
+.box_star .imageStyle_left{
+  position: absolute;
+  z-index: 2;
+  top:160rpx;
+  right: 670rpx;
+  width:50rpx;
+  height:50rpx;
+}
+.imageStyle{
+  width:50rpx;
+  height:50rpx;
+}
+/* 显示词语部分 */
+.top{
+  width: 750rpx;
+  height: 705rpx;
+}
+.orange{
+  width: 750rpx;
+  height: 705rpx;
+  position: absolute;
+  z-index: 1;
+}
+.header{
+  position: relative;
+  width: 586rpx;
+  height: 300rpx;
+  margin: auto;
+
+  
+}
+.fangkuang{
+  position: relative;
+  z-index: 2;
+  width: 586rpx;
+  height: 300rpx;
+  margin-top: 130rpx;
+  
+}
+.py{
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 200rpx;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  font-size:110rpx;
+  font-family: PingFang;
+  font-weight: bold;
+  color: #ff8676;
+}
+/* 拼音的样式 */
+.box_py{
+  width: 690rpx;
+  height: 250rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 90rpx auto;
+  font-size:100rpx;
+  font-family: "Gungsuh";
+  font-weight: bold;
+  color: #333333;
+  
+
+}
+.box_py .eye{
+  
+  margin-right: 20rpx;
+}
+.imageStyle{
+  width: 50rpx;
+  height: 50rpx;
+}
+/* 输入框样式 */
+.box_input {
+  width: 600rpx;
+  height: 90rpx;
+  border-radius: 10rpx;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  box-shadow:rgba(0,0,0,.2) 0px 0px 10px;
+  
+}
+/* 上下按钮样式 */
+.box_sx {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 180rpx;
+}
+.former,.next{
+  width: 275rpx;
+  height: 100rpx;
+}
+.sx1[plain],.sx2[plain]{
+  padding: 0;
+  border:none;   
+  width: 275rpx;
+  height: 100rpx;
+}
+/* 成语拼音样式 */
+.cuowu{
+  color:red;
+}
+.passwordT{
+  display:none
+}
+.pinyin{
+  font-size:80rpx;
+}
+.pbox{
+  display: flex;
+  justify-content:center;
+  width:650rpx;
+}

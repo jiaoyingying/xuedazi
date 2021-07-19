@@ -5,6 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    aa:{
+      name:"学习记录",
+      color:"#ffffff"
+    },
     
   },
 

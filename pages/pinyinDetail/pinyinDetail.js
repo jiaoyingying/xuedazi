@@ -7,30 +7,48 @@ Page({
    * 页面的初始数据
    */
   data: {
+    aa:{
+      "name": "拼音学习"
+    },
     zimu:{},
     id:1,
     left:1,
-    right:24,
+    right:23,
     cid:null,
-    isTiptrue:true
+    isTiptrue:true,
+    tapTime: '',
+    buttonClicked:false
   },
   setZimu(res){
-    console.log(res)
-    this.setData({
-      zimu:res.data[0]
-    })
-    this.yinpin(res.data[0].src)
+    //console.log(res)
+    if(res.status==100)
+    {
+      util.login().then(this.get_C);
+    }
+    else if(res.status==200){
+      console.log(res.data[0])
+      this.setData({
+        zimu:res.data[0]
+      })
+      this.audioPlay()
+    }   
   },
-  getLetter:function(e){
-    console.log(e);
-    let id=e;
+  get_C:function(){
     let dt={};
-    dt.lid=id;
+    dt.lid=this.data.id;
     util.myrequest(dt,getApp().globalData.url_0+"getLetter").then(this.setZimu);
   },
+  getLetter:function(e){
+    //console.log(e);
+    this.setData({
+      id:parseInt(e)
+    })
+    this.get_C();
+  },
   shang:function(e){
+    util.buttonClicked(this);
     let id0=e.currentTarget.id;
-    console.log(id0)
+    //console.log(id0)
     if(id0==this.data.left)
     {
       wx.showToast({
@@ -47,8 +65,9 @@ Page({
     }
   },
   xia:function(e){
+    util.buttonClicked(this);
     let id0=e.currentTarget.id;
-    console.log(id0)
+    //console.log(id0)
     if(id0==this.data.right)
     {
       wx.showToast({
@@ -64,21 +83,21 @@ Page({
       })
     }
   },
-  yinpin:(e)=>{
-    let src=e;
-    console.log(src)
-    innerAudioContext.autoplay = true
-    innerAudioContext.src = src;
-    innerAudioContext.onPlay(() => {
-      console.log('开始播放')
-    })
-    innerAudioContext.onError((res) => {
-      console.log(res.errMsg)
-      console.log(res.errCode)
-    })
-  },
+  // yinpin:(e)=>{
+  //   let src=e;
+  //   //console.log(src)
+  //   innerAudioContext.autoplay = true
+  //   innerAudioContext.src = src;
+  //   innerAudioContext.onPlay(() => {
+  //     //console.log('开始播放')
+  //   })
+  //   innerAudioContext.onError((res) => {
+  //     //console.log(res.errMsg)
+  //     //console.log(res.errCode)
+  //   })
+  // },
   closeThis:function(e){
-    console.log("dianjile")
+    //console.log("dianjile")
     wx.setStorage({
       key: 'PydetailOpen',
       data: 'OpenTwo'
@@ -95,51 +114,55 @@ Page({
     }
     else if(cid==1){
       this.setData({
-        id:32,
-        left:32,
-        right:55
+        id:24,
+        left:24,
+        right:47
       })
-      this.getLetter(32)
+      this.getLetter(24)
     }
     else if(cid==2){
       this.setData({
-        id:56,
-        left:56,
-        right:71
+        id:48,
+        left:48,
+        right:63
       })
-      this.getLetter(56)
+      this.getLetter(48)
     }
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.audioCtx = wx.createAudioContext('myAudio')
     const{cid}=options;
-    console.log(cid)
+    //console.log(cid)
     this.setData({
       cid:cid
     })
-    let firstOpen = wx.getStorageSync("PydetailOpen")
-    console.log("是否首次打开本页面==",firstOpen)
-    if (firstOpen == undefined || firstOpen == '') { //根据缓存周期决定是否显示新手引导
-      this.setData({
-        isTiptrue: true,
-      })
-    } else {
+    // let firstOpen = wx.getStorageSync("PydetailOpen")
+    //console.log("是否首次打开本页面==",firstOpen)
+    //if (firstOpen == undefined || firstOpen == '') { //根据缓存周期决定是否显示新手引导
+      //this.setData({
+     //   isTiptrue: true,
+      //})
+    //} else {
       this.setData({
         isTiptrue: false,
       })
     this.getChar();
-    }
+  //  }
   },
+  // audioPlay: function () {
+  //   innerAudioContext.play()
+  // },
   audioPlay: function () {
-    innerAudioContext.play()
+    this.audioCtx.play()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**

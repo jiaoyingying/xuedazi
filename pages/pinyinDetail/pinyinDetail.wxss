@@ -1,9 +1,9 @@
 /* pages/pinyinDetail/pinyinDetail.wxss */
-page {
-  background-color: #e4f6d6;
-}
+/* page {
+  background-color: ;
+} */
 /* 以下为引导页样式设置 */
-.shadow_box{
+/* .shadow_box{
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -36,71 +36,88 @@ page {
   width: 270rpx;
   color: #fff;
   background-color: #4e4e4e;
+} 
+
+
+/* 新页面样式 */
+
+.top{
+  width: 750rpx;
+  height: 690rpx;
 }
-.box{
-  width:500rpx;
-  height:350rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 24rpx;
-  font-family: Segoe UI;
-  font-size:200rpx;
+.orange{
+  width: 750rpx;
+  height: 690rpx;
+  position: absolute;
+  z-index: 1;
+}
+.header{
+  position: relative;
+  width: 425rpx;
+  height: 425rpx;
+  margin: auto;
+
+  
+}
+.circle{
+  position: relative;
+  z-index: 2;
+  width: 425rpx;
+  height: 425rpx;
+  margin-top: 20rpx;
+  
+}
+.py{
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 135rpx;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  font-size:130rpx;
+  font-family: "Gungsuh";
   font-weight: bold;
-  color: #707070;
-  background-color:#fff;
-  margin:auto;
-  margin-top:100rpx;
+  color: #f2861a;
 }
+/* 字的样式 */
 .box_zi{
   box-sizing: border-box;
-  padding:40rpx;
-  width:500rpx;
-  height:200rpx;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left:125rpx;
-  margin-top:30rpx;
-  margin-bottom:200rpx;
-  color: #707070;
+  width: 160rpx;
+  margin: 70rpx auto;
+  font-size:160rpx;
+  font-family: PingFang;
+  font-weight: bold;
 
 }
-.zi{
-  font-size:150rpx;
-  font-family: Segoe UI;
-  font-weight: bold;
+/* 喇叭样式 */
+.tapimg1{  
+  width: 160rpx;
+  height: 160rpx;
 }
-.icon{
-  height:120rpx;
-  width:120rpx;
-  position: relative;
+ 
+.tapbtn1[plain]{
+  padding: 0;
+  border:none;   
+  width: 160rpx;
+  height: 160rpx;
 }
-.icon image{
-  height:120rpx;
-  width:120rpx;
-}
-.icon .btn{
-  position:absolute;
-  height:120rpx;
-  width:120rpx;
-  left:0;
-  top:0;
-  opacity: 0;
-}
+/* 上下按钮样式 */
 .box_sx {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 10rpx;
 }
-.box_sx .sx1{
-  width: 270rpx;
-  color: #707070;
-
+.former,.next{
+  width: 275rpx;
+  height: 100rpx;
 }
-.box_sx .sx2{
-  width: 270rpx;
-  color: #707070;
-  background-color: #fdff73;
+.sx1[plain],.sx2[plain]{
+  padding: 0;
+  border:none;   
+  width: 275rpx;
+  height: 100rpx;
 }

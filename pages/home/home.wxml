@@ -1,30 +1,15 @@
-<!-- 以下为引导页遮罩 -->
-<view class="shadow_box" hidden="{{!isTiptrue}}">
-  <view class="finger" style="margin-top:280rpx;">
-    <image src="/image/icon/finger.png"></image>
-    <text>点击此处学拼音</text>
-  </view>
-  <view class="finger">
-    <image src="/image/icon/finger.png"></image>
-    <text>点击此处学打字</text>
-    </view>
-  <view class="finger">
-    <image src="/image/icon/finger.png"></image>
-    <text>点击此处玩游戏</text>
-    </view>
-  <view class="dianji">
-    <button class="know" bindtap="closeThis">知道了</button>
-  </view>
-</view>
+<image class="picture" src='/image/newicon/homeheader.png'></image>
 <view class="box">
-  <navigator class="item" url="/pages/pinyin/pinyin"  >
-    <view class="txt">拼音学习</view>
+  <navigator class="item" url="/pages/home2/home2?id=1"  >
+    <image class="image" src='/image/newicon/learningpinyin.png'></image>
   </navigator>
-  <navigator class="item" url="/pages/daziHome/daziHome">
-    <view class="txt">打字练习</view>
+  <navigator class="item" url="/pages/practicedazi/practicedazi">
+    <image class="image" src='/image/newicon/learningtype.png'></image>
   </navigator>
   <navigator class="item" url="/pages/game/game" >
-    <view class="txt">趣味游戏</view>
+    <image class="image" src='/image/newicon/game.png'></image>
   </navigator>
 </view>
+
+
 

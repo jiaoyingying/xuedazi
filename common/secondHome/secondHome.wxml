@@ -1,0 +1,6 @@
+<!--common/secondHome/secondHome.wxml-->
+  <navigator class="item" url="{{myurl}}" >
+    <!--<view class="txt">{{myname}}</view>-->
+    <image class="img" mode="widthFix" src="{{mysrc}}"></image>
+  </navigator>
+

@@ -1,15 +1,17 @@
+
 <!--pages/likeChengyu/likeChengyu.wxml-->
-<view class="head">成语收藏 共{{collectNums}}个</view>
+
+<view class="head">
+  <my-navi my-property='{{aa}}'></my-navi>
+</view>
 
 <view class="list">
   <view class="box" wx:for="{{listData}}">
-    <navigator class="item" url="/pages/daIdiom/daIdiom?id={{item.id}}">
-    <view class="box_py">{{index+1}}</view>
-    <text space="emsp"></text>
+    <navigator class="item" url="{{newurl}}?id={{item.id}}">
+    <view class="box_num">{{index+1}}</view>
     <view class="box_py">{{item.hanzi}}</view>
-    <text space="emsp"></text>
-    <view class='box_py'>{{item.pinyin}}</view>
     </navigator>
   <image class="more" src="../../image/icon/more.png"></image>
   </view>
 </view>
+<button class="btn_review" type="primary" bindtap="review">一键复习({{collectNums}})</button>

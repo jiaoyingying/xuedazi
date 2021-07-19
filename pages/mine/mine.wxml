@@ -1,48 +1,42 @@
 <!--pages/mine/mine.wxml-->
-
-<view wx:if="{{canIUse}}" >
-    <view class="{{hasUserInfo?'hid':''}}">
-        <view class='header'>
-            <image src='/image/icon/weixin.png'></image>
+<image class="picture" src="/image/newicon/wodeheader.png"></image>
+<view class="userinfo">
+    <view class="info">
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <view class="userinfo-nickname">
+            <text>{{userInfo.nickName}}</text>
+            <view class="edit" bindtap="edituser">
+                <image src="/image/newicon/edit.png"></image>
+            </view>
         </view>
-
-        <view class='content'>
-            <view>申请获取以下权限</view>
-            <text>获得你的公开信息(昵称，头像等)</text>
+        <view class="jifen"> 
+            <view class="point">
+                <view class="ziti">{{score}}</view>
+                <view>积分</view> 
+            </view>
+            <view class="rank">
+                <view class="ziti">{{rank}}</view>
+                <view>排行榜</view> 
+            </view>
+            <view class="button" bindtap="paihang"><image src="/image/newicon/ranklist.png"></image></view>
+            </view>
         </view>
+        
+        
     </view>
-    <view class="userinfo">
-        <block wx:if="{{!hasUserInfo}}">
-        <button class='bottom' type='primary' wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 授权登录 </button>
-        <button class='bottom' type='primary' wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登录 </button>
-        </block>
-        <block wx:else>
-        <view class="tophead">个人中心</view>
-        <view class="info">
-            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-            <text class="game1" space="ensp" bindtap="paihang">积分：{{score}}  <text class="game1" style="color:green">排行榜</text></text>
-            
-        </view>
-        <view class="list">
+    <view class="list">
             <ul class="item">
-                <li>
-                    <navigator url="../like/like">
-                        <image src="/image/icon/star.png"></image>我的收藏
-                    </navigator>
+                <li bindtap="like">
+                    <image src="/image/newicon/orangestar.png"></image>学习记录
                 </li>
                 <li>
                     <navigator url="../help/help">
-                        <image src="/image/icon/help2.png"></image>帮助中心
+                        <image src="/image/newicon/helpcenter.png"></image>帮助中心
                     </navigator>
                 </li>
-                <li bindtap="contact"><image src="/image/icon/contact.png"></image>联系我们</li>
-                <li><image src="/image/icon/notice.png"></image>系统通知</li>
+                <li bindtap="contact"><image src="/image/newicon/contactus.png"></image>联系我们</li>
+                <li bindtap="notice"><image src="/image/newicon/notice.png"></image>系统通知</li>
 
             </ul>
         </view>
-        
-        </block>
-    </view>
-</view>
-<view wx:else>请升级微信版本</view>
+

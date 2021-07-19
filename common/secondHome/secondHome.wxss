@@ -1,0 +1,10 @@
+/* common/secondHome/secondHome.wxss */
+
+ .item{
+   box-sizing: border-box;
+   /* border:2rpx solid #666666; */
+ }
+ .img{
+   width:630rpx;
+   height:250rpx;
+ }

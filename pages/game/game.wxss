@@ -1,9 +1,22 @@
+
+.bg{
+  height:100%;
+  width: 100%;
+  overflow:hidden
+}
 .jifenImage{
   width:80rpx;
   height:80rpx;
 }
 .jifen{
-  font-size:60rpx;
+  width:100%;
+  font-size:50rpx;
+  color: #fff481;
+  font-weight: 600;
+  position:absolute;
+  top:14%;
+  text-align: center;
+  margin-left:20rpx;
 }
 .jifenBox{
   display:flex;
@@ -11,42 +24,75 @@
 }
 .bigbox{
   position:absolute;
-  top:100rpx;
-  height:1000rpx;
+  padding-top:2%;
+  top:24%;
+  height:60%;
   width:100%;
+
 }
 .leftTopbox{
   position: absolute;
-  left:10rpx;
-  top:10rpx;
+  left:70rpx;
+  top:7%;
 }
 .rightTopbox{
   position: absolute;
-  right:60rpx;
-  top:10rpx;
+  right:130rpx;
+  top:7%;
 }
 .rightBottombox{
   position: absolute;
-  right:60rpx;
-  bottom:90rpx;
+  right:130rpx;
+  top:85%;
 }
 .leftBottombox{
   position: absolute;
-  left:10rpx;
-  bottom:90rpx;
+  left:70rpx;
+  top:85%;
 }
 .zibox{
-  height:120rpx;
-  width: 120rpx;
-  border-radius: 10rpx;
-  background-color: #515151;
+  height:260rpx;
+  width: 230rpx;
+  background-image:url(https://www.jiaoyy2020.xyz/hanzibg.png);
+  background-size: 230rpx 260rpx;
+  background-repeat: no-repeat;
+  background-position: center;
   color:white;
-  font-size:90rpx;
+  font-size:120rpx;
+  padding-top:80rpx;
   position:absolute;
-  top:440rpx;
-  left:315rpx;
+  top:30%;
+  left:50%;
+  margin-left:-115rpx;
+  margin-top:40rpx;
   text-align:center;
+  z-index:10;
 }
 .movetrue{
   background-color: rgb(80, 160, 0);
+}
+.bgimg{
+  width:750rpx;
+  height:100%;
+  z-index: -1;
+  position: absolute;
+}
+.zibg{
+  position: absolute;
+  height:262rpx;
+  width: 234rpx;
+  top: 245rpx;
+  right: 80rpx;
+}
+
+.rankbox{
+  position: absolute;
+  z-index: 1;
+  top: 14%;
+  right: 20rpx;
+  width: 145rpx;
+  height: 90rpx;
+}
+.rankbox image{
+  width: 145rpx;
 }

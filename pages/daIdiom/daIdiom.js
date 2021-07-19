@@ -6,27 +6,34 @@ Page({
    * 页面的初始数据
    */
   data: {
+    aa:{
+      name:"成语练习"
+    },
     isCollect:false,//是否被收藏
     isTiptrue:true,
     inputvalue:'',
     id:0,
-    idiom:{id:1,
-      word:"挨肩迭背",
-      pinyin:["āi, jiān ,dié ,bèi"],
-      abbreviation:"ajdb",
-      explanations:"哀悲哀；伤伤害。忧愁而不悲伤，形容感情有节制；另形容诗歌、音乐优美雅致，感情适度。比喻做事没有过头也无不及。",
-    },
+    idiom:{},
     left:1,
-    right:597,
+    right:338,
     flag:false,
     defaultType: true,
     passwordType:true,
     storetType:true,
     storeN:[],
+    src:"https://jiaoyy2020.xyz/success.mp3",
+    buttonClicked:false
   },
   //初始化页面数据
   setChar(res){
-    console.log(res)
+    //console.log(res)
+    if(res.status==100)
+    {
+      //过期了，重新登录，获取token值
+      //console.log("过期了")
+      util.login().then(this.getIdiom)
+    }
+    else if(res.status==200){
     let collectIdiom=wx.getStorageSync('collectIdiom')||[];
     //判断是否被收藏
     let isCollect=collectIdiom.some(v=>v.id===res.data[0].id)
@@ -39,12 +46,17 @@ Page({
       isCollect,
       inputvalue:''
     })
+  }
   },
   getHanzi:function(e){
-    console.log(e);
-    let id=e;
+    this.setData({
+      id:parseInt(e)
+    })
+    this.getIdiom();
+  },
+  getIdiom:function(){
     let dt={};
-    dt.lid=id;
+    dt.lid=this.data.id;
     util.myrequest(dt,getApp().globalData.url_0+"getIdiom").then(this.setChar);
   },
   getShang:function(e){
@@ -58,13 +70,11 @@ Page({
       id=parseInt(id0)-1
     }
     this.getHanzi(id)
-    this.setData({
-      id:id
-    })
   },
   shang:function(e){
+    util.buttonClicked(this);
     let id0=e.currentTarget.id;
-    console.log(id0)
+    //console.log(id0)
     this.getShang(id0)
   },
   getXia:function(e){
@@ -78,32 +88,30 @@ Page({
       id=parseInt(id0)+1
     }
     this.getHanzi(id)
-    this.setData({
-      id:id
-    })
   },
   xia:function(e){
+    util.buttonClicked(this);
     let id0=e.currentTarget.id;
-    console.log(id0)
+    //console.log(id0)
     this.getXia(id0)
   },
   //成语解释
   explain:function(e){
-    console.log("explain")
+    //console.log("explain")
     wx.showModal({
       title: '成语释义',
       content: this.data.idiom.explanation,
       success (res) {
       if (res.confirm) {
-        console.log('用户点击确定')
+        //console.log('用户点击确定')
       } else if (res.cancel) {
-        console.log('用户点击取消')
+        //console.log('用户点击取消')
       }
     }
   })
 },
 closeThis:function(e){
-  console.log("dianjile")
+  //console.log("dianjile")
   wx.setStorage({
     key: 'DaidiomOpen',
     data: 'OpenTwo'
@@ -117,7 +125,7 @@ closeThis:function(e){
    */
   onLoad: function (options) {
     let firstOpen = wx.getStorageSync("DaidiomOpen")
-    console.log("是否首次打开本页面==",firstOpen)
+    //console.log("是否首次打开本页面==",firstOpen)
     if (firstOpen == undefined || firstOpen == '') { //根据缓存周期决定是否显示新手引导
       this.setData({
         isTiptrue: true,
@@ -132,14 +140,12 @@ closeThis:function(e){
     {
       id = parseInt(Math.random() * parseInt(this.data.right) + 1);
     }
-    console.log(id);
+    ////console.log(id);
     this.getHanzi(id);
-    this.setData({
-      id:id,
-    })
   },
   check:function(e){
-    console.log(e.detail.value)
+    if(e.detail.value.length==this.data.idiom.word.length)
+    {
     if(e.detail.value!=this.data.idiom.word)
     {
       this.setData({
@@ -152,8 +158,19 @@ closeThis:function(e){
       })
     }
     else{
+      //音乐声
+      this.audioPlay();
+      wx.showToast({
+        title: '正确',
+        icon:'success'
+      })
       this.getXia(this.data.id)
     }
+  }
+  },
+  audioPlay: function () {
+    console.log("shengyin")
+    this.audioCtx.play()
   },
   //改变输入框字体颜色
   bindf:function(){
@@ -182,8 +199,8 @@ store:function()
 {
   let isCollect=false;
   let collectIdiom=wx.getStorageSync('collectIdiom')||[];
-  let index=collectIdiom.findIndex(v=>v.id===this.data.id)
-  console.log(collectIdiom)
+  let index=collectIdiom.findIndex(v=>v.id===parseInt(this.data.id))
+  //console.log(collectIdiom)
   if(index!==-1)
   {
     collectIdiom.splice(index,1);
@@ -194,7 +211,7 @@ store:function()
     })
   }else{
     let obj={};
-    obj.id=this.data.id;
+    obj.id=parseInt(this.data.id);
     obj.hanzi=this.data.idiom.word
     obj.pinyin=this.data.idiom.pinyin
     collectIdiom.push(obj);
@@ -213,7 +230,7 @@ store:function()
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.audioCtx = wx.createAudioContext('myAudio')
   },
 
   /**

@@ -1,0 +1,57 @@
+<!--viewages/test/test.wxml-->
+<view>
+    <image class="img" src="/image/newicon/bgred.png"></image>
+    <my-navi my-property='{{aa}}'></my-navi>
+    
+    <view class="type_content">       
+        <view class="type_box">
+            <view class="innerbox" >
+                <image class="boximg" src="/image/newicon/orange2.png"></image>
+                <view class="innertxt">
+                    <view style="font-size: 50rpx;">{{error_text}}</view>
+                    <view style="font-size: 24rpx;">错误</view>
+                </view>
+            </view>
+            <view class="lianjie" hidden="{{!type_speed_flag}}" >
+                <image src="/image/newicon/lian1.png"></image>
+            </view>
+            <view class="innerbox">
+                <image class="boximg" src="/image/newicon/green2.png"></image>
+                <view class="innertxt">
+                    <view style="font-size: 50rpx;">{{time_text}}</view>
+                    <view style="font-size: 24rpx;">时间</view>
+                </view>
+            </view>
+            <view class="lianjie" hidden="{{!type_speed_flag}}" >
+                <image src="/image/newicon/lian2.png"></image>
+            </view>
+            <view class="innerbox">
+                <image  class="boximg" src="/image/newicon/blue2.png"></image>
+                <view class="innertxt">
+                    <view style="font-size: 50rpx;">{{currcorrect_text}}</view>
+                    <view style="font-size: 24rpx;">当前准确率%</view>
+                </view>
+            </view>
+            <view hidden="{{type_speed_flag}}" class="innerbox">
+                <image  class="boximg" src="/image/newicon/orange2.png"></image>
+                <view class="innertxt">              
+                    <view style="font-size: 50rpx;">{{type_speed_text}}</view>
+                    <view style="font-size: 24rpx;">打字速度 个/分</view>
+                </view>
+            </view>
+        </view>
+        <view class="text_box" >
+          <view class="text_item" wx:for="{{textContent}}" wx:key="id">
+          <text wx:if="{{item.flag==0}}">{{item.char}}</text>
+          <text wx:elif ="{{item.flag==1}}" class='rightflag'>{{item.char}}</text>
+          <text wx:else class="wrongflag">{{item.char}}</text>
+          </view>
+        </view>
+       <view class="text_area">
+        <textarea name="" id="textarea_box" adjust-position="false" bindinput="processCurrentText" disabled="{{textarea_box_flag}}" value="{{textarea_box_value}}" placeholder="请在此输入……"
+        > </textarea>
+       </view>
+       <button style="width:600rpx" hidden="{{!restart_flag}}" class="restart" bindtap="startGame">开始</button>
+       <button style="width:600rpx" hidden="{{restart_flag}}" class="restart" bindtap="resetValues">重新开始</button>
+    </view>
+</view>

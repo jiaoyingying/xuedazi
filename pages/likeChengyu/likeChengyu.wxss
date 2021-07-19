@@ -1,16 +1,19 @@
 /* pages/likeChengyu/likeChengyu.wxss */
 /* pages/likeDanzi/likeDanzi.wxss */
 .head{
-  display:flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   width: 100%;
-  height: 150rpx;
-  background-color: #E4F6D6;
-  font: bold 48rpx 'Segoe UI';
-  color: #605E5E;
+  height: 180rpx;
+  background-color: #198cff;
+  
 }
-
+.head text{
+  position: absolute;
+  top: 180rpx;
+  left: 200rpx;
+  font: bold 48rpx 'Segoe UI';
+  color: #000000;
+}
 /* // 定义.container设置容器样式 */
 .list{
   display: flex;
@@ -24,30 +27,43 @@
   width: 100%;
   height: 100rpx;
   line-height: 100rpx;
-  font: bold 40rpx Segoe UI;
-  color: #707070;
-  border-bottom: 1px solid #707070;
+  font: 40rpx Segoe UI;
+  color: #333333;
+  border-bottom: 1px solid #bdbaba;
 }
+.box_num{
+  width: 50%;
+  /* text-align: center; */
+  line-height: 100rpx;
+  flex:1;
+  margin-left: 50rpx; 
+ } 
  .box_zi{
 
-  text-align: center;
+  /* text-align: center; */
   line-height: 100rpx;
+  margin-right: 200rpx;
  } 
  .box_py{
-
+  padding-right: 200rpx;
   text-align: center;
   line-height: 100rpx;
- 
+  margin-right: 120rpx;
  } 
 
  .more{
-  height:40rpx;
-  width: 40rpx;
+  height:50rpx;
+  width: 50rpx;
   position:absolute;
-  right: -10rpx;
-  top:34rpx;
+  right: 10rpx;
+  top:25%;
+  margin-right:50rpx;
 }
 .box{
   position:relative;
 }
-
+.btn_review{
+  position:fixed;
+  bottom:50rpx;
+  right:20rpx;
+}

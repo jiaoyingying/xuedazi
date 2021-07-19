@@ -1,0 +1,8 @@
+<view class="contain">
+  <view class="box" wx:for="{{navilist}}">
+    <sHome mysrc="{{item.mysrc}}" myurl="{{item.myurl}}"></sHome>
+  </view>
+  <view class="box">
+    <sHome mysrc="/image/newicon/upper_lower.png" myurl="/pages/keyboard/keyboard"></sHome>
+  </view>
+</view>

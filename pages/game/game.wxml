@@ -1,12 +1,22 @@
 <!--pages/game/game.wxml-->
-<view class="jifenBox">
-  <image class="jifenImage" src="/image/icon/score.png"></image>
-  <view class="jifen">{{score}}</view>
+
+<view class="bg">
+  <image class="bgimg"  src="/image/newicon/bggame.png"></image>
+  <my-navi my-property='{{aa}}'></my-navi>
+</view> 
+<view>
+<view class="jifen">{{score}}</view>
+<view class="rankbox" bindtap="paihang">
+    <image mode="widthFix" src="/image/newicon/ranklist.png"></image>
 </view>
 <movable-area class="bigbox">
-  <gamebox class="leftTopbox" mysrc="/image/icon/envelope1.png" pinyin="{{pinyinchoices[0]}}"></gamebox>
-  <gamebox class="rightTopbox" mysrc="/image/icon/envelope2.png" pinyin="{{pinyinchoices[1]}}"></gamebox>
-  <gamebox class="rightBottombox" mysrc="/image/icon/envelope3.png" pinyin="{{pinyinchoices[2]}}"></gamebox>
-  <gamebox class="leftBottombox" mysrc="/image/icon/envelope4.png" pinyin="{{pinyinchoices[3]}}"></gamebox>
-  <movable-view class="zibox {{colorflag?'movetrue':''}}" x="{{x}}" y="{{y}}" damping="10" direction="all" inertia bindtouchstart="moveStart"  bindtouchend="moveEnd">{{characters.hanzi}}</movable-view>
+  <gamebox class="leftTopbox"  pinyin="{{pinyinchoices[0]}}"></gamebox>
+  <gamebox class="rightTopbox"  pinyin="{{pinyinchoices[1]}}"></gamebox>
+  <gamebox class="rightBottombox"  pinyin="{{pinyinchoices[2]}}"></gamebox>
+  <gamebox class="leftBottombox"  pinyin="{{pinyinchoices[3]}}"></gamebox>
+  <movable-view class="zibox {{colorflag?'movetrue':''}}" x="{{x}}" y="{{y}}" damping="10" direction="all" inertia bindtouchstart="moveStart"  bindtouchend="moveEnd" disabled="{{movableFlag}}">
+    {{characters.hanzi}}
+    <view class="hanzi"></view>
+  </movable-view>
 </movable-area>
+</view>

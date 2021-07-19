@@ -1,6 +1,22 @@
 <!--pages/like/like.wxml-->
-<view class="head">我的收藏</view>
+
+<view class="head">
+
+<image src="/image/newicon/likebg.png" class="likebg"></image>
+<my-navi my-property='{{aa}}'></my-navi>
+
+</view>
 <view class="detail">
-  <navigator class="likedanzi" url="/pages/likeDanzi/likeDanzi">单字收藏</navigator>
-  <navigator class="likechengyu" url="/pages/likeChengyu/likeChengyu">成语收藏</navigator>
+<navigator class="record" url="/pages/likeChengyu/likeChengyu?cid=0">
+  <image src="/image/newicon/record.png" class="learnrecord"></image> 
+</navigator>
+<navigator class="likedanzi" url="/pages/likeChengyu/likeChengyu?cid=1">
+  <image src="/image/newicon/danzilike.png" class="danzilike"></image> 
+</navigator>
+<navigator class="likeciyu" url="/pages/likeChengyu/likeChengyu?cid=2">
+  <image src="/image/newicon/ciyulikepng.png" class="ciyulike"></image> 
+</navigator>
+<navigator class="likechengyu" url="/pages/likeChengyu/likeChengyu?cid=3">
+  <image src="/image/newicon/chengyulike.png" class="chengyulike"></image> 
+</navigator>
 </view>

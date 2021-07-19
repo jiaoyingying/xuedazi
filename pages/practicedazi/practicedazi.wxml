@@ -1,0 +1,24 @@
+<view class="con">
+  <image class="picture" src='/image/newicon/Typingpractice.png'></image>
+  <my-navi my-property='{{aa}}'></my-navi>
+  <view class="box">
+    <navigator class="item top" url="/pages/dazi/dazi"  >
+      <image class="image" src='/image/newicon/dzlx.png'></image>
+    </navigator>
+    <navigator class="item top" url="/pages/phrase/phrase?c_id=2">
+      <image class="image" src='/image/newicon/social.png'></image>
+    </navigator>
+    <navigator class="item" url="/pages/daIdiom/daIdiom" >
+      <image class="image" src='/image/newicon/cylx.png'></image>
+    </navigator>
+    <navigator class="item" url="/pages/phrase/phrase?c_id=1"  >
+      <image class="image" src='/image/newicon/shopping.png'></image>
+    </navigator>
+    <navigator class="item" url="/pages/test/test">
+      <image class="image" src='/image/newicon/xstz.png'></image>
+    </navigator>
+    <navigator class="item" url="/pages/phrase/phrase?c_id=0" >
+      <image class="image" src='/image/newicon/healthcare.png'></image>
+    </navigator>
+  </view>
+</view>

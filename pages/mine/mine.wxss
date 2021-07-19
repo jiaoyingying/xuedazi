@@ -1,50 +1,34 @@
 /* pages/mine/mine.wxss */
-.header {
-  margin: 90rpx 0 90rpx 50rpx;
-  border-bottom: 1px solid #ccc;
-  text-align: center;
-  width: 650rpx;
-  height: 300rpx;
-  line-height: 450rpx;
-}
-
-.header image {
-  width: 200rpx;
-  height: 200rpx;
-}
-
-.content {
-  margin-left: 50rpx;
-  margin-bottom: 90rpx;
-  text-align: center;
-}
-
-.content text {
-  display: block;
-  color: #404040;
-  margin-top:40rpx;
-}
-
-.bottom {
-  border-radius: 80rpx;
-  margin: 70rpx 50rpx;
-  font-size: 35rpx;
+page{
+  background-color: #f4f4f4;
+  width:750rpx;
 }
 .userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #707070;
-}
+  background-color: #f4f4f4;
 
+  margin-top: -150rpx;
+  height:351rpx;
+  width: 100%;
+ 
+}
 .userinfo-avatar {
+  position: absolute;
+  top:-80rpx;
   overflow: hidden;
   width: 128rpx;
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
 }
-
+.userinfo-nickname{
+  color:black; position: absolute; top: 80rpx;
+  display:flex;
+  justify-content: center;
+}
 .usermotto {
   margin-top: 200px;
 }
@@ -52,52 +36,98 @@
   display: none;
 }
 .userinfo .tophead{
-  width: 100%;
-  height: 300rpx;
-  background-color: #DBF4F4;
+  /* width: 100%;
+  height: 300rpx; */
   font: 35rpx Segoe UI;
   color: #707070;
-  text-indent: 1em;
+  text-indent: 1em; 
   font-weight: bold;
+} 
+.picture{
+  width: 100%;
+  height: 430rpx; 
 }
 .userinfo .info{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: fixed;
-  top: 150rpx;
-  width: 600rpx;
-  height: 400rpx;
-  border-radius: 24rpx;
+  position: relative;
+  width: 690rpx;
+  height: 351rpx;
+  border-radius: 10rpx;
   box-shadow: 0rpx 10rpx 8rpx rgba(0, 0, 0, .2);
   text-align: center;
   background-color: #fff;
 }
-.userinfo .list{
+.jifen{
+  /* height: 100rpx; */
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  position: relative;
+  top: 100rpx;
+  width: 100%;
+  height: 180rpx;
+}
+.jifen .point{
+  width: 210rpx;
+  height: 100%;
+  margin-left: 50rpx;
+}
+.jifen .rank{
+  width: 230rpx;
+  height: 100%; 
+}
+.jifen .button{
+  width: 230rpx;
+  height: 100%; 
+} 
+.button image{
+  width: 190rpx; 
+  height: 85rpx; 
+  position: relative; 
+  margin-top: 30rpx;
+}
+.list{
   display: flex;
   justify-content: center;
-  margin-top: 300rpx;
-  
+  background-color: #f4f4f4f4;
 }
-.userinfo .list .item image{
+.list .item image{
   float: left;
   width: 50rpx;
   height: 50rpx;
-  margin: 20rpx 30rpx;
+  margin: 30rpx;
+  margin-top: 15rpx
 }
-.userinfo .list .item li{
+.list .item li{
   float: left;
   list-style: none;
-  width: 600rpx;
-  height: 80rpx;
+  width: 690rpx;
+  height: 120rpx;
   line-height: 80rpx;
+  margin: 9rpx 30rpx;
+  border-radius: 10rpx;
   padding: 20rpx;
   background-color: #fff;
   border-bottom: 2rpx solid #f4f2f3;
   font-weight: bold;
+  font-size: 40rpx;
+  box-sizing: border-box;
 }
 .game1{
   font-size:30rpx;
   margin-top: 20rpx;
+}
+
+.ziti{
+  height: 90rpx; font-size: 50rpx; font-weight: bold
+}
+.edit{
+  margin-left: 10rpx;
+}
+.edit image{
+  width:50rpx;
+  height:50rpx;
 }

@@ -1,7 +1,7 @@
 <!-- pages/dazi/dazi.wxml
 <text>pages/dazi/dazi.wxml</text> -->
 <!-- 以下为引导页遮罩 -->
-<view class="shadow_box" hidden='{{!isTiptrue}}'>
+<!-- <view class="shadow_box" hidden='{{!isTiptrue}}'>
   <view class="finger1">
     <image src="/image/icon/finger.png"></image>
     <text>点击问号查看帮助</text>
@@ -13,8 +13,8 @@
   <view class="dianji">
     <button class="know" bindtap="closeThis">知道了</button>
   </view>
-</view>
-<view class="box_star" >
+</view> -->
+<!-- <view class="box_star" >
   <navigator url="../help/help"><image src='/image/icon/help.png' class='imageStyle_left'></image></navigator>
   <image src='{{isCollect? "../../image/icon/store2.png": "../../image/icon/store1.png"}}' bindtap='store' id="{{id}}" class='imageStyle'></image>
 </view>
@@ -37,5 +37,40 @@
 <view class="box_sx">
   <button bindtap="shang" class="sx1" id="{{id}}">上一个</button>
   <button bindtap="xia" class="sx2" id="{{id}}">下一个</button> 
+</view> -->
+<!-- 帮助与收藏 -->
+<view class="box_star" >
+  <navigator url="../help/help"><image src='/image/newicon/why.png' class='imageStyle_left'></image></navigator>
+  <image src='{{isCollect? "../../image/icon/store2.png": "../../image/icon/store1.png"}}' bindtap='store' id="{{id}}" class='imageStyle'></image>
+</view>
+<!-- 显示词语部分 -->
+<view class="top">
+  <image src="/image/newicon/bgred.png" class="orange"></image>
+  <my-navi my-property='{{aa}}'></my-navi>
+  <view class="header">
+  <image src="/image/newicon/ciyubg.png" class="fangkuang"> </image>
+  <text class="py">{{characters.hanzi}}</text>
+</view>
+</view>
+<!-- 眼睛和拼音 -->
+<view class="box_py" bindtap='eyeStatus'>
+  <view class="eye">
+    <image src='{{defaultType? "../../image/icon/close_eye.png": "../../image/icon/open_eye.png"}}' class='imageStyle'></image>
+  </view>
+  <view class="{{passwordType?'passwordT':''}}">{{characters.pinyin}}</view>
+</view>
+<!-- 输入框 -->
+<view class="box_input">
+  <input class="input {{flag?'cuowu':''}}" type="text" name="shuru" value="{{inputvalue}}" bindinput="check" bindfocus="bindf" placeholder="在此输入汉字" confirm-type="send" maxlength="6"/>
+</view>
+<audio src="{{src}}" id="myAudio"></audio>
+<!-- 上一个下一个 -->
+<view class="box_sx">
+  <button class="sx1"  bindtap="{{!buttonClicked?'shang':''}}" plain='true' id="{{id}}"> 
+    <image src='/image/newicon/formerbutton.png' mode='widthFix' class="former"></image>
+  </button>
+  <button class="sx2"  bindtap="{{!buttonClicked?'xia':''}}" plain='true' id="{{id}}"> 
+    <image src='/image/newicon/laterbutton.png' mode='widthFix' class="next"></image>
+  </button>
 </view>
 

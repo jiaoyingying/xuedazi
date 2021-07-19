@@ -1,7 +1,7 @@
 <!-- pages/pinyinDetail/pinyinDetail.wxml
 <text>pages/pinyinDetail/pinyinDetail.wxml</text> -->
 <!-- 以下为引导页遮罩 -->
-<view class="shadow_box" hidden='{{!isTiptrue}}'>
+<!-- <view class="shadow_box" hidden='{{!isTiptrue}}'>
   <view class="finger">
     <text>点击喇叭听读音  </text>
     <image src="/image/icon/finger.png"></image>
@@ -10,18 +10,32 @@
   <view class="dianji">
     <button class="know" bindtap="closeThis">知道了</button>
   </view>
+</view> -->
+
+<view class="top">
+  <image src="/image/newicon/bgorange.png" class="orange"></image>
+  <my-navi my-property='{{aa}}'></my-navi>
+  <view class="header">
+    
+  <image src="/image/newicon/pinyinbg.png" class="circle"> </image>
+  <text class="py">{{zimu.letter}}</text>
 </view>
-<view class="box">
-  {{zimu.letter}}
 </view>
+
 <view class="box_zi">
-  <view class="zi">{{zimu.c_letter}}</view>
-  <view class="icon">
-    <image src="/image/icon/volume.png"></image>
-    <button class="btn"  bindtap="audioPlay"></button>
-  </view>
+  {{zimu.c_letter}}
+</view>
+<view class="horn">
+  <button class="tapbtn1"  bindtap="audioPlay" plain='true'> 
+    <image src='/image/newicon/horn.png' mode='widthFix' class="tapimg1"></image>
+  </button>
+  <audio src="{{zimu.src}}"  id="myAudio"></audio>
 </view>
 <view class="box_sx">
-  <button class="sx1" bindtap="shang" id="{{id}}">上一个</button>
-  <button class="sx2" bindtap="xia" id="{{id}}">下一个</button> 
+  <button class="sx1"  bindtap="{{!buttonClicked?'shang':''}}" plain='true' id="{{id}}"> 
+    <image src='/image/newicon/formerbutton.png' mode='widthFix' class="former"></image>
+  </button>
+  <button class="sx2"  bindtap="{{!buttonClicked?'xia':''}}" plain='true' id="{{id}}"> 
+    <image src='/image/newicon/laterbutton.png' mode='widthFix' class="next"></image>
+  </button>
 </view>

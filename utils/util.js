@@ -19,7 +19,7 @@ function login(){
     wx.login({
       success (res) {
         if (res.code) {
-          console.log(res.code)
+          //console.log(res.code)
           //发起网络请求
           wx.request({
             url: getApp().globalData.url_0+'onLogin',
@@ -28,14 +28,14 @@ function login(){
               code: res.code
             },
             success (res) {
-              //console.log(res.data)
+              //console.log(res)
               getApp().globalData.token=res.data.token;
-              console.log("login()---token:"+getApp().globalData.token)
+              //console.log("login()---token:"+getApp().globalData.token)
               resolve()
             }
           })
         } else {
-          console.log('登录失败！' + res.errMsg)
+          //console.log('登录失败！' + res.errMsg)
         }
       }
     })
@@ -55,16 +55,51 @@ function myrequest(e,url0){
         value:e
       },
       success (res) {
-        console.log(res.data)
+        //console.log(res)
         resolve(res.data)
+      },
+      fail(res)
+      {
+        console.log(res);
+        reject();
       }
     })
   })
   return promise;
 }
+function networkManage() {
+  wx.onNetworkStatusChange((res) => {
+    this.globalData.globalNetWork = res.networkType;  //这里是我定义的用来全局存储网络状态的
+    console.log("res.networkType")
+    console.log(res.networkType)
+    if(res.networkType != 'wifi' && res.networkType != 'none'){
+      wx.showToast({
+        title: '正在使用流量',
+        icon:'none',
+        duration:5000
+      })
+    }else if(res.networkType == 'none'){
+      wx.showLoading({
+        title: '网络异常',
+        duration:5000,
+        mask: true
+      })
+    }
+  })
+}
+function buttonClicked(self) {  self.setData({
+  buttonClicked: true
+})
+setTimeout(function () {    self.setData({
+    buttonClicked: false
+  })
+}, 500)
+}
 
 module.exports = {
   formatTime,
   login,
-  myrequest
+  myrequest,
+  networkManage,
+  buttonClicked
 }

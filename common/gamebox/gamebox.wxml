@@ -1,5 +1,7 @@
 <!--common/gamebox.wxml-->
 <view class="box"> 
-  <image class="imageStyle" src="{{mysrc}}"></image>
-  <view class="box_py" >{{pinyin}}</view>
+ 
+  <view class="box_py" >
+    <text class="py">{{pinyin}}</text>
+  </view>
 </view>

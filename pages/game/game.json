@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "gamebox":"/common/gamebox/gamebox"
-  }
+    "gamebox":"/common/gamebox/gamebox",
+    "my-navi": "/common/mynavi/mynavi"
+  },
+  "navigationStyle":"custom",
+  "disableScroll":true
 }

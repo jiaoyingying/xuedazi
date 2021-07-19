@@ -6,21 +6,30 @@ Page({
    * 页面的初始数据
    */
   data: {
+    aa:{
+      name:"单字练习"
+    },
     isCollect:false,//是否被收藏
     inputvalue:'',
     id:1,
     characters:{},
     left:1,
-    right:4598,
+    right:3262,
     flag:false,
     defaultType: true,
     passwordType:true,
     storetType:true,
     storeN:[],
-    isTiptrue:true
+    isTiptrue:true,
+    src:"https://jiaoyy2020.xyz/success.mp3",
+    buttonClicked:false
   },
   setChar(res){
-    console.log(res)
+    //console.log(res)
+    if(res.status==100){
+      util.login().then(this.getrequest);
+    }
+    else if(res.status==200){
     let collectChar=wx.getStorageSync('collectChar')||[];
     //判断是否被收藏
     let isCollect=collectChar.some(v=>v.id===res.data[0].id)
@@ -31,12 +40,18 @@ Page({
       inputvalue:'',
       isCollect:isCollect
     })
+  }
   },
   getHanzi:function(e){
-    console.log(e);
-    let id=e;
+    //console.log(e);
+    this.setData({
+      id:parseInt(e)
+    })
+    this.getrequest()
+  },
+  getrequest:function(){
     let dt={};
-    dt.lid=id;
+    dt.lid=this.data.id;
     util.myrequest(dt,getApp().globalData.url_0+"getHanzi").then(this.setChar);
   },
   getShang:function(e){
@@ -44,7 +59,7 @@ Page({
     let id=0;
     if(id0==this.data.left)
     {
-      id = parseInt(Math.random() * 4598 + 1);
+      id = parseInt(Math.random() * parseInt(this.data.right) + 1);
     }
     else{
       id=parseInt(id0)-1
@@ -55,8 +70,9 @@ Page({
     })
   },
   shang:function(e){
+    util.buttonClicked(this);
     let id0=e.currentTarget.id;
-    console.log(id0)
+    //console.log(id0)
     this.getShang(id0)
   },
   getXia:function(e){
@@ -64,7 +80,7 @@ Page({
     let id=0;
     if(id0==this.data.left)
     {
-      id = parseInt(Math.random() * 4598 + 1);
+      id = parseInt(Math.random() * parseInt(this.data.right) + 1);
     }
     else{
       id=parseInt(id0)+1
@@ -75,12 +91,13 @@ Page({
     })
   },
   xia:function(e){
+    util.buttonClicked(this);
     let id0=e.currentTarget.id;
-    console.log(id0)
+    //console.log(id0)
     this.getXia(id0)
   },
   closeThis:function(e){
-    console.log("dianjile")
+    //console.log("dianjile")
     wx.setStorage({
       key: 'DaziOpen',
       data: 'OpenTwo'
@@ -95,7 +112,7 @@ Page({
   
   onLoad: function (options) {
     let firstOpen = wx.getStorageSync("DaziOpen")
-    console.log("是否首次打开本页面==",firstOpen)
+    //console.log("是否首次打开本页面==",firstOpen)
     if (firstOpen == undefined || firstOpen == '') { //根据缓存周期决定是否显示新手引导
       this.setData({
         isTiptrue: true,
@@ -108,16 +125,16 @@ Page({
     let {id}=options;
     if(id==undefined)
     {
-      id = parseInt(Math.random() * 4598 + 1);
+      id = parseInt(Math.random() * parseInt(this.data.right) + 1);
     }
-    console.log(id);
+    //console.log(id);
     this.getHanzi(id);
-    this.setData({
-      id:id,
-    })
+
   },
   check:function(e){
-    console.log(e.detail.value)
+    //console.log(e.detail.value)
+    if(e.detail.value.length==1)
+    {
     if(e.detail.value!=this.data.characters.hanzi)
     {
       this.setData({
@@ -130,8 +147,19 @@ Page({
       })
     }
     else{
+      //音乐声
+      this.audioPlay();
+      wx.showToast({
+        title: '正确',
+        icon:'success'
+      })
       this.getXia(this.data.id)
     }
+    }
+  },
+  audioPlay: function () {
+    console.log("shengyin")
+    this.audioCtx.play()
   },
   //改变输入框字体颜色
   bindf:function(){
@@ -160,8 +188,8 @@ store:function()
 {
   let isCollect=false;
   let collectChar=wx.getStorageSync('collectChar')||[];
-  let index=collectChar.findIndex(v=>v.id===this.data.id)
-  console.log(collectChar)
+  let index=collectChar.findIndex(v=>v.id===parseInt(this.data.id))
+  //console.log(collectChar)
   if(index!==-1)
   {
     collectChar.splice(index,1);
@@ -172,7 +200,7 @@ store:function()
     })
   }else{
     let obj={};
-    obj.id=this.data.id;
+    obj.id=parseInt(this.data.id);
     obj.hanzi=this.data.characters.hanzi
     obj.pinyin=this.data.characters.pinyin
     collectChar.push(obj);
@@ -192,23 +220,13 @@ store:function()
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.audioCtx = wx.createAudioContext('myAudio')
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let pages=getCurrentPages();
-    let currentpage=pages[pages.length-1];
-    let options=currentpage.options; 
-
-
-    const {id}=options;
-    //获取详情
-    //获取缓存
-    
-
   },
 
   /**
@@ -224,7 +242,7 @@ store:function()
    */
   onUnload: function () {
     //切换到其他页面时，将收藏的东西写入数据库
-    console.log("onUnload")
+    //console.log("onUnload")
   },
 
   /**

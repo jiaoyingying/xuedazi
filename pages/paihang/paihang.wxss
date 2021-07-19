@@ -1,20 +1,29 @@
 /* pages/paihang/paihang.wxss */
-.header{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 150rpx;
-  background-color: #FFF7BC;
-  font: bold 48rpx 'Segoe UI';
-  color: #605E5E;
+.bg{
+  position: fixed;
+  width:100%;
+  height:200rpx;
+  z-index:10;
+  background-image:url(https://www.jiaoyy2020.xyz/paihang.png);
+  background-size: 750rpx 200rpx;
 }
+
+
+.head{
+  position: relative;
+  width: 100%;
+  height: 180rpx;
+  background-color: #f8a52f;
+  position: fixed;
+}
+
 .list{
   display: flex;
   flex-direction: column;
 }
 .box{
   display:flex;
+  width:100%;
 }
 .box_2{
   width:50rpx;
@@ -22,10 +31,10 @@
   border:1rpx solid #eeeeee;
   border-radius: 25rpx;
   margin:5rpx 20rpx;
+  margin-left: 50rpx;
 }
 .box_1{
   color:#616161;
-  font-weight: bold;
 }
 .body{
   display: flex;
@@ -33,4 +42,12 @@
   padding: 20rpx 20rpx;
   border-bottom: 1rpx solid #dddddd;
   line-height: 50rpx;
+}
+.contain{
+  position:absolute;
+  top:200rpx;
+  width: 100%;
+}
+.mine{
+  background-color: gold;
 }
